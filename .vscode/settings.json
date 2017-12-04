@@ -1,0 +1,8 @@
+{
+    "less.compile": {
+        "sourceMap": true,  
+        "main": ["${workspaceRoot}\\Less\\main.less"],
+        "out": "${workspaceRoot}\\css\\",
+        "autoprefixer": "> 5%"
+    }
+}
