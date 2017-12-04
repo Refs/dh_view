@@ -1,23 +1,7 @@
 ul {
-  color: #05ecfb;
-}
-ul p {
-  color: #05ecfb;
+  background-color: #05ecfb;
 }
 ul li {
-  color: #05ecfb;
-}
-ul li a {
-  color: #05ecfb;
-}
-ul li a span {
-  color: #05ecfb;
-}
-h2 {
-  color: #f29600;
-}
-
-h2  span{
   color: #f29600;
 }
 /*# sourceMappingURL=./main.css.map */
