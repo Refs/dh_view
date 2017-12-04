@@ -1,10 +1,41 @@
-ul {
+@font-face {
+  font-family: 'dh font';
+  src: url('../fonts/dh_view_fonts/iconfont.eot');
+  src: url('../fonts/dh_view_fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dh_view_fonts/iconfont.woff2') format('woff2'), url('../fonts/dh_view_fonts/iconfont.woff') format('woff'), url('../fonts/dh_view_fonts/iconfont.ttf') format('truetype'), url('../fonts/dh_view_fonts/iconfont.svg#iconfont') format('svg');
+}
+.dh-font {
+  font-family: 'dh font';
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dh-quanping1:before {
+  content: "\e66d";
+}
+.dh-eryanghuatan:before {
+  content: "\e951";
+}
+.dh-eryanghualiu:before {
+  content: "\e616";
+}
+.dh-licheng1:before {
+  content: "\e64f";
+}
+.dh-gushumingmu:before {
+  content: "\e614";
+}
+body {
+  position: relative;
   background-color: #05ecfb;
 }
-ul li {
-  color: #f29600;
-}
-ul {
-  color: red;
+#main {
+  /* position: relative; */
+  height: 1080px !important;
+  width: 1920px !important;
 }
 /*# sourceMappingURL=./main.css.map */

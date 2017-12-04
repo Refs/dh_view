@@ -1,1 +1,0 @@
-{"version":3,"sources":["_settins.color.less","<input css 6>","variables.less"],"names":[],"mappings":"AAIA;EACI,0BAAA;CCHH;ADED;EAGQ,eAAA;CCFP;ACMD;EACI,WAAA;CDJH","file":"to.css","sourcesContent":[null,"ul {\n  background-color: #05ecfb;\n}\nul li {\n  color: #f29600;\n}\nul {\n  color: red;\n}\n/*# sourceMappingURL=./main.css.map */",null]}

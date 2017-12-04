@@ -32,9 +32,16 @@ vscode 全局配置：
     
 },
 
+下面两个，用来设置less文件更改时，自动保存less, 也就是可以自动编译less为css,css改变，配合browser-sync在浏览器上同步显示；感觉上就类似于，直接在chrome上面修改是一样的； 习惯于在线下进行调试，因为考虑到，浏览器的分屏；
+
+"workbench.panel.location": "bottom",
+"files.autoSave": "afterDelay",
+
 ```
 
 * Less Intellisence 
+
+
 * start git-bash 
 
 之所以要用这个是因为browser-sync 使用vscode自带的终端，打开之后会can't get
@@ -45,6 +52,7 @@ vscode 全局配置：
     browser-sync start --server --files "css/*.css,*.html"
 ```
 
+> 基本的思路是，将workspace 添加到chrome ; 在source面板保存后，easy-less会自动编译； 然后browser-sync会检测到文件更新，从而刷新浏览器；
 
 ## bootstrap整体框架
 
@@ -139,4 +147,23 @@ vscode 全局配置：
 //响应式工具类，编译后对应源码为6148~6357行
 @import "responsive-utilities.less";   
 
+```
+
+
+### 设置字体less
+
+大部分与bootstrap都是一样的，其中一个@{icon-font-svg-id}，打开字体svg文件，一看便知
+
+```less
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+
+//   其中 id 指的就是icon-font-svg-id
 ```
