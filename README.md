@@ -54,6 +54,24 @@ vscode 全局配置：
 
 > 基本的思路是，将workspace 添加到chrome ; 在source面板保存后，easy-less会自动编译； 然后browser-sync会检测到文件更新，从而刷新浏览器；
 
+
+## js环境配置
+
+### 安装typings使vscode拥有智能提示的能力
+
+* 核心代码：
+```
+    （貌似现在需要连vpn 才可以下载t.ds文件）
+    typings search bootstrap
+    typings install --save dt~bootstrap --global
+```
+* 根目录生成 jsconfig.json文件
+
+* --save会生成typings.json文件，存有安装的记录；
+
+* 设置gitignore文件夹，使上传的时候 不包括 typings文件夹；
+
+
 ## bootstrap整体框架
 
 ```less
