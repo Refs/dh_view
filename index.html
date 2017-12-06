@@ -25,7 +25,13 @@
   </div>
   <!-- main end -->
 
-  <script src="./js/require.js"></script>
-  <script src="./js/main.js"></script>
+
+  <!-- javascript ========================================= -->
+  <script src="./js/vendor/require.js"></script>
+  <script type="text/javascript">
+    require(['./js/common.js'],function(){
+      require(['app/main-home']);
+    })
+  </script>
 </body>
 </html>
