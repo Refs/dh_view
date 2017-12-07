@@ -20,14 +20,29 @@ function drawEcharts($, ECharts) {
 function drawBmpEcharts($, ECharts) {
     var mychart = ECharts.init($('#main')[0], 'view-theme');
 
+    //Random color 
+    var randomColor = function () {
+        var color = [
+            '#C1232B', '#B5C334', '#FCCE10', '#E87C25', '#27727B',
+            '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+            '#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+        ];
+        var i = Math.round(Math.random() * 15);
+        return color[i];
+    }
+
+    // =============control bmap========
+    // heFei base station coordinate 
+    var baseStationCoordinate = [117.29, 32.0581];
+
     // bmap center coordinate array
     var bmapCenter = [121.4648, 31.2891];
 
     // bmap scale
-    var bmapZoom = 15;
+    var bmapZoom = 5;
 
     //  if wheel could scale bmap
-    var isroam = true;
+    var isbmaproam = true;
 
     // map-style json
     var bmapStyleJson = {
@@ -136,55 +151,81 @@ function drawBmpEcharts($, ECharts) {
         }]
     }
 
-    // lines data； 
-    var linesData = [{
-            coords: [
-                // multiple array to make pline;
-                [121.4648, 31.2891],
-                [117.29, 32.0581],
-                [122.2229, 39.4409]
-            ],
-            lineStyle: {
-                normal: {
-                    color: "rgba(223,90,90,1)",
-                    curveness: 0.2
-                }
-            }
-
-        },
-        {
-            coords: [
-                // multiple array to make pline;
-                [118.4766, 39.6826],
-                [117.29, 32.0581],
-            ],
-            lineStyle: {
-                normal: {
-                    color: "yellow",
-                    curveness: 0.2
-                }
-            }
-
-        },
-    ]
-    // format lines data;
-    var convertLinesData = function (data) {
-        return data;
+    // ==========control effect scatter============
+    var effectScatterItemStyle = {
+        normal: {
+            color: "#f4e925",
+            shadowBlur: 10,
+            shadowColor: "#333"
+        }
     };
-
-    // effectScatter data;
-    var effectScatterData = [
-        [104.075082,30.653696,"effectScatter1",900],
-        
-    ]
     // format effectScatter data
-    var convertEffectScatterData = function(data){
-        return data;
+    var convertEffectScatterData = function (data) {
+        return [data];
+    }
+    // effectscatter symbsize can set base datai's value；
+    var setEffectScatterSymbolSize = function (datai) {
+        return 25;
     }
 
-    // datai代表component对应的数据data数组的元素data[i]；可以根据data[i]的内容（如value的维度）来设置符号的大小；
-    var setEffectScatterSymbolSize =  function(datai){
-        return 25;
+    // =============control scatter ====================
+    var scatterItemStyle = {
+        normal: {
+            color: "#FD4C09"
+        },
+        emphasis: {
+            borderColor: '#fff',
+            borderWidth: 1
+        }
+    };
+    // scatter data;
+    var scatterData = [
+        [113.8953, 22.901, "scatter1", 900],
+        [124.541, 40.4242, "scatter2", 900],
+        [115.0488, 39.0948, "scatter2", 900],
+        [110.3467, 41.4899, "scatter2", 900],
+
+    ]
+    // format scatter data
+    var convertScatterData = function (data) {
+        return data;
+    }
+    // sccatter symbsize can set base datai's value；
+    var setScatterSymbolSize = function (datai) {
+        return 7;
+    }
+
+
+    // ==========control lines==================
+    var linesEffectSymbolSize = 2;
+    var linesEffectConstantSpeed = 50;
+    var linesEffectTrailLength = 0.5;
+    var linesItemStyle = [{
+            normal: {
+                opacity: 0.2,
+                width: 1
+            }
+        },
+        {
+            normal: {
+                width: 0
+            }
+        }
+    ];
+    var convertLinesData = function (scatterData) {
+        var res = [];
+        for (i = 0; i < scatterData.length; i++) {
+            var obj = {};
+            obj.coords = [scatterData[i], baseStationCoordinate];
+            obj.lineStyle = {
+                normal: {
+                    color: "#F7D627",
+                    curveness: 0.2
+                }
+            }
+            res.push(obj);
+        }
+        return res;
     }
 
     var option = {
@@ -192,53 +233,45 @@ function drawBmpEcharts($, ECharts) {
         bmap: {
             center: bmapCenter,
             zoom: bmapZoom,
-            roam: isroam,
+            roam: isbmaproam,
             mapStyle: bmapStyleJson
         },
         // lines compomoent
         series: [{
                 type: 'lines',
                 coordinateSystem: 'bmap',
-                polyline: true,
-                data: convertLinesData(linesData),
+                // polyline: true,
+                data: convertLinesData(scatterData),
                 silent: true,
-                lineStyle: {
-                    normal: {
-                        opacity: 0.2,
-                        width: 1
-                    }
-                },
+                lineStyle: linesItemStyle[0],
                 progressiveThreshold: 500,
                 progressive: 200
             },
             {
                 type: 'lines',
                 coordinateSystem: 'bmap',
-                polyline: true,
-                data: convertLinesData(linesData),
-                lineStyle: {
-                    normal: {
-                        width: 0
-                    }
-                },
+                // polyline: true,
+                data: convertLinesData(scatterData),
+                lineStyle: linesItemStyle[1],
                 effect: {
-                    constantSpeed: 50,
+                    constantSpeed: linesEffectConstantSpeed,
                     show: true,
-                    trailLength: 0.5,
-                    symbolSize: 1.5
+                    trailLength: linesEffectTrailLength,
+                    symbolSize: linesEffectSymbolSize
                 },
                 // 
                 zlevel: 1
             },
+
             {
-                name: 'base station',
+                name: 'baseStation',
                 type: 'effectScatter',
                 coordinateSystem: 'bmap',
-                data: convertEffectScatterData(effectScatterData),
-                symbolSize:function(datai){
+                data: convertEffectScatterData(baseStationCoordinate),
+                symbolSize: function (datai) {
                     var symbolsize = setEffectScatterSymbolSize(datai);
                     return symbolsize;
-                } ,
+                },
                 showEffectOn: 'render',
                 rippleEffect: {
                     brushType: 'stroke'
@@ -248,17 +281,33 @@ function drawBmpEcharts($, ECharts) {
                     normal: {
                         formatter: '{b}',
                         position: 'right',
-                        show: true
+                        show: false
                     }
                 },
-                itemStyle: {
-                    normal: {
-                        color: '#f4e925',
-                        shadowBlur: 10,
-                        shadowColor: '#333'
-                    }
-                },
+                itemStyle: effectScatterItemStyle,
             },
+            {
+                name: 'powerStation',
+                type: 'scatter',
+                coordinateSystem: 'bmap',
+                // symbol: 'rect',
+                data: convertScatterData(scatterData),
+                symbolSize: function (datai) {
+                    var symbolsize = setScatterSymbolSize(datai);
+                    return symbolsize;
+                },
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                itemStyle: scatterItemStyle,
+                // zlevel:1
+            },
+
 
         ]
     };
