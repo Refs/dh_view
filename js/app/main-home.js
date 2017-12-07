@@ -6,11 +6,8 @@ define([
     'bootstrap'
 ],drawEcharts);
 
-function drawEcharts($, ECharts,BMapExtension) {
+function drawEcharts($, ECharts) {
     var mychart = ECharts.init($('#main')[0],'view-theme');
-    // display data
-
-
     
     var option = {
         
@@ -124,121 +121,12 @@ function drawEcharts($, ECharts,BMapExtension) {
                 }]
             }
         },
-        series: [{
-            type: 'lines',
-            coordinateSystem: 'bmap',
-            polyline: true,
-            data: busLines,
-            silent: true,
-            lineStyle: {
-                normal: {
-                    opacity: 0.2,
-                    width: 1
-                }
-            },
-            progressiveThreshold: 500,
-            progressive: 200
-        } 
-        , {
-            type: 'lines',
-            coordinateSystem: 'bmap',
-            polyline: true,
-            data: busLines,
-            lineStyle: {
-                normal: {
-                    width: 0
-                }
-            },
-            effect: {
-                constantSpeed: 50,
-                show: true,
-                trailLength: 0.5,
-                symbolSize: 1.5
-            },
-            zlevel: 1
-        }, 
-        {
-            name: '网格员',
-            type: 'scatter',
-            coordinateSystem: 'bmap',
-            symbol: 'rect',
-            data: convertData([{
-                    name: "网格员1",
-                    value: 9
-                },
-                {
-                    name: "网格员2",
-                    value: 120
-                },
-                {
-                    name: "网格员3",
-                    value: 211
-                },
-            ]),
-            symbolSize: 25,
-            label: {
-                normal: {
-                    show: false
-                },
-                emphasis: {
-                    show: false
-                }
-            },
-            itemStyle: {
-                emphasis: {
-                    borderColor: '#fff',
-                    borderWidth: 1
-                }
-            }
-        },
-        {
-            name: '民警',
-            type: 'effectScatter',
-            coordinateSystem: 'bmap',
-            data: convertData_police([{
-                    name: "民警1",
-                    value: 900
-                },
-                {
-                    name: "民警2",
-                    value: 1200
-                },
-                {
-                    name: "民警3",
-                    value: 2111
-                },
-            ]),
-            symbolSize: function (val) {
-                return 25;
-            },
-            showEffectOn: 'render',
-            rippleEffect: {
-                brushType: 'stroke'
-            },
-            hoverAnimation: true,
-            label: {
-                normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: true
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#f4e925',
-                    shadowBlur: 10,
-                    shadowColor: '#333'
-                }
-            },
-            zlevel: 1
-        },
+        
        
-    ]
-    
     };
     mychart.setOption(option);
 
-    var bmap = mychart.getModel().getComponent('BMapExtension');
+    var bmap = mychart.getModel().getComponent('bmap').getBMap();
     console.log(bmap)
 
     // var BMapExt = new BMapExtension($('#main')[0], BMap, ECharts, {

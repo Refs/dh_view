@@ -230,9 +230,61 @@ echarts2.0目录里面，在bmap扩展中有两个文件，一个是bmap.js 一�
     + 如果再添加其他方法就需要通过chart.getModel().getComponent('bmap').getBMap()获取百度地图实例，然后参考百度api
     https://github.com/ecomfe/echarts/issues/3116
 
+*  关于这句话理解的坑var bmap = mychart.getModel().getComponent('bmap').getBMap();
+
+    + getModel必须要等到 setOption后才有； 因为getModel（获得的对象就是），
+
+```js
+        // 只有setOption之后，this上面才有_model属性；
+		echartsProto.setOption = function (option, notMerge, lazyUpdate) {
+            if (true) {
+                zrUtil.assert(!this[IN_MAIN_PROCESS], '`setOption` should not be called during main process.');
+            }
+
+            this[IN_MAIN_PROCESS] = true;
+
+            if (!this._model || notMerge) {
+                var optionManager = new OptionManager(this._api);
+                var theme = this._theme;
+                var ecModel = this._model = new GlobalModel(null, null, theme, optionManager);
+                ecModel.init(null, null, theme, optionManager);
+            }
+
+            this._model.setOption(option, optionPreprocessorFuncs);
+
+            if (lazyUpdate) {
+                this[OPTION_UPDATED] = true;
+            } else {
+                updateMethods.prepareAndUpdate.call(this);
+                this._zr.refreshImmediately();
+                this[OPTION_UPDATED] = false;
+            }
+
+            this[IN_MAIN_PROCESS] = false;
+
+            this._flushPendingActions();
+        };
+        // getModel 用于返回_model属性值
+        echartsProto.getModel = function () {
+            return this._model;
+        };
+        // 属性_model指的就是option;
+        echartsProto.getOption = function () {
+            return this._model && this._model.getOption();
+        };
+
+```
+
+*   由于自己不熟，就先入为主的认为getComponent() 并不是针对bmap而言的，getModel获取的是option,而 getModel().getComponent()获取的是option 内部的组件；类似geo grid timeline series 等；bmap只是其中一个；而getMap()是bmap组件特有的一个方法； 这样一条路下来，就通了；
 
 * ecahrts 地图压盖 未能实现； https://github.com/ecomfe/echarts/issues/5935
 
 ### bootstrap填坑
 
 * bootstrap.min.css 相比bootstrap.css少了许多的内容，最明显的就是初始css环境的时候，body上面并没有设置样式；
+
+
+
+### 下一步工作的具体思路；
+* 点击scatter 后下钻； 通过api 获取 点击的 组件的 data数据；data 数据里面有改点的地理坐标值； 然后调bmap的实例，将其中心设置为点击scater的地理位置，然后调整一下缩放比例即可；  这种思路很ok;
+* 更上一层的做法是，看一下bmap的api  地图下钻后，弹出提示框，里面放相应的电站信息；
