@@ -466,3 +466,97 @@ function(){
 ```
 
 > 总之要实现的就三个功能；地图下钻； 弹出modal 或tootips; 卫星视图；如何实现与提升操纵性，明天再说吧；
+
+> 地图下钻这一步，最好是不采用modal框了，或tootip了； 由于地图每次缩放的中心点，都是以scatter的坐标进行的，即缩放之后不同scatter在屏幕中的位置是固定的；简单点的做法是在屏幕中固定的某个位置放一个div; 当地图缩放事件触发之后，让其显示并展示相应的数据；
+
+> 更高一级的做法是，利用requirejs做spa操作；即再做一个1920*1080的div，绝对定位到main上面，作为公共刷新区域；但这样可能是不合适的；因为不能整体扣在上面；那样地图上面就像隔着一层玻璃；没办法去点击； 外面的图片还是需要一点一点的拼出来，与切出来； 一块一块的去凑； 和原先的做法是一样的；
+
+> 除上面一点需要注意以外，外面几个小chart 的处理函数； 还要对外提供一个接口option; 因为针对于不同的用户电站，其option是不同的；
+
+ ```js
+    function drawEcharts(echarts, BMapExtension) {
+        drawBmpEcharts(echarts, BMapExtension);
+        drawBarEcharts(echarts);
+        drawRoseEcharts(echarts);
+    };
+ ```
+ > 现在要将上面的式子，按照reuqire的思想，改造成下面的样子
+
+```js
+ function drawBmpEcharts(echarts, BMapExtension) {
+     .....
+
+     echarts.setOptions(option);
+    //  地图 绘制完毕 绘制其它的地图；即主入口只有一个就是地图的入口；将drawBarEcharts单独的作为一个模块，去调用就可以了；
+     require('drawBarEcharts');
+     require('drawRoseEcharts');
+
+ }
+
+```
+
+```js
+// drawBarEcharts.js:
+define(['option','echarts'],function(option,echarts){
+    var myecharts = echart.init(dom);
+    myecharts.setoption(option);
+})
+
+```
+
+
+```js
+// 理想的情况是 根据用户电站的不同而返回不同的option 而不是上来就将每个图表对应的option写死；
+// baroption.js
+ window.bar = barvalue;
+ define(['data'],function(){
+    //  刚开始的应该是请求的整个公司的数据；然后利用这些数据，去拼成option;
+    //后来可能请求的就是某个电站的数据，然后利用这些数据去拼option；
+    // 也就是说外面应该有数据进来，否则没办法改变，改变请求的链接；
+    // 怎么去接收数据喃；
+    $.ajax(/barvalue....,function(
+        .....
+    ))
+     return option = {
+         ....
+     }
+ })
+
+```
+
+```js
+// 解决的思路，模块化的函数，虽然是处在了不同的js文件中,但其运行依旧是在当前的全局作用域内运行的；甚至是在require函数时的作用范围内所运行的；这一点的理解特别重要； 也就是其依旧是可以访问到外部的变量的，并非是在一个封闭的壳内， 其依旧是可以范围外部变量，和通过return 将自己的变量返回给外部的； 
+
+// 如果上述的原理是正确的，我们可以将点击scatter时 所产生的数据，返回到全局作用域中；这样options函数，就可以访问全局变量，拼接链接，从而从服务器抓取的数据。拼接option; 这样上层函数就能得以执行；
+
+// 现在的问题就在于 上述原理是否正确；自己可以测试一下，define() 内的function 是否可以访问外部变量；
+
+// 其实：
+require(['a.js'],function(a){
+    // a 是function 作用域内部最顶层的变量，即a 是处在作用域范围内的；
+    //a.js 运行后 将返回值 赋值给a , 相当于a.js是在函数内部运行的； 即应该能访问函数内部的变量，或者差一点，函数外部的变量； 这个可以试一试；
+    
+})
+
+```
+
+```js
+// data.js  
+// 用来接收与返回数据；数据返回好返回，关键是要接收的数据从哪来；
+
+// 在地图的界面，用户点击相应电站的时候，将事件触发，事件触发会产生许多的数据，而这些return出去；然后让data接收就可以了；
+define([drapBmap],function(){
+    rerturn data ;
+})
+```
+
+```js
+//这一切得有一个触发事件；否则不会动起来；
+ $(window).on('hashchange', function (e) {}
+```
+
+
+
+```js
+//怎么能让option不写死喃； 当用户点击某一个电站的时候，会影响option的输出结果；；；；进而影响到echarts的渲染；
+```
