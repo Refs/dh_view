@@ -189,3 +189,50 @@ vscode 全局配置：
 
 
 ### 利用echarts的在线主题构建工具，去构建主题；
+
+
+### echarts踩坑 
+
+* echarts刚开始实例化的时候，并没有getModel()的方法，只有在运用setOption()方法之后，才会有此方法；即：
+
+```js
+    var mychart = ECharts.init($('#main')[0],'view-theme');
+    
+    // var option = {};
+    // mychart.setOption(option);
+
+    var bmap = mychart.getModel().getComponent('BMapExtension');
+    // 此处会报错，在没有option之前，没有getModel的方法；
+
+```
+
+* package 引包的时候的坑
+
+name: 指的是引用名；
+location: 指的是文件js文件所在目录；（不是直接到文件，这是一个坑）
+main: 就是js文件名；可以不添加js;
+
+* bmap.js 与 main.js文件混淆
+
+echarts2.0目录里面，在bmap扩展中有两个文件，一个是bmap.js 一个是main.js 两者不是同一个文件，使用的方式更不同；在echarts3.0里面，只提供一个bmap.js文件；这就恶心了； 
+
+```js
+    // 引用main.js 的时候，可以使用；
+   var BMapExt = new BMapExtension($('#main')[0], BMap, echarts, {
+            enableMapClick: false
+        });
+```
+
+* 关于bamap的设置；bmap主要配置就是 center, zoom, mapStyle。
+
+    + 首先引入echarts.js,bmap.js,百度api。前两个在dist中可以找到，api需要去百度申请key
+    + option中加入bmap，设置一些参数，此时不需要再添加geo，然后series中的coordinateSystem设置为bmap，这样就可以生成地图
+    + 如果再添加其他方法就需要通过chart.getModel().getComponent('bmap').getBMap()获取百度地图实例，然后参考百度api
+    https://github.com/ecomfe/echarts/issues/3116
+
+
+* ecahrts 地图压盖 未能实现； https://github.com/ecomfe/echarts/issues/5935
+
+### bootstrap填坑
+
+* bootstrap.min.css 相比bootstrap.css少了许多的内容，最明显的就是初始css环境的时候，body上面并没有设置样式；

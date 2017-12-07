@@ -6,16 +6,16 @@ requirejs.config({
     'jquery': 'vendor/jquery',
     'bootstrap': 'vendor/bootstrap',
     'echarts': 'vendor/echarts',
-    'bmap': 'vendor/bmap',
     'view-theme': 'vendor/view-theme'
   },
+  packages: [{
+    name: 'BMap',
+    location: './vendor/',
+    main: 'bmap'
+  }],
   shim: {
     'bootstrap': {　　　　　　　　
       deps: ['jquery']　　　　　　
-    },
-    'bmap': {　　　　　　　　
-      deps: ['echarts'],
-　　　 exports: 'BMapExtension'　　　　　　
     },
     'echarts-theme': {　　　　　　　　
       deps: ['echarts'],
