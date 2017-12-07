@@ -46,7 +46,8 @@ function drawBmpEcharts($, ECharts) {
 
     // map-style json
     var bmapStyleJson = {
-        'styleJson': [{
+        'styleJson': [
+        {
             'featureType': 'water',
             'elementType': 'all',
             'stylers': {
@@ -148,7 +149,8 @@ function drawBmpEcharts($, ECharts) {
             'stylers': {
                 'visibility': 'off'
             }
-        }]
+        }
+    ]
     }
 
     // ==========control effect scatter============
