@@ -541,6 +541,80 @@ require(['a.js'],function(a){
 ```
 
 ```js
+/***************************************结论****************************/ 
+// 面向对象中，变量是无法传递的，所以上面的可能都是猜错了；
+// a.js:
+define(['$'],function($){
+    // 这一步函数运行中，是不可能接受外部变量的；
+    var obj = {};
+    var a = 3;
+    obj.sum = function(num){
+        return a + num;
+    }
+    return obj;
+})
+
+// b.js
+function(){
+    var b = 7;
+    require(['a.js'],function(object){
+        var he = object.sum(b);
+        // console.log(he)   10
+    })
+}
+
+// 即a.js运行中 不能去接收外部的变量，但是 其返回对象的方法函数，即能接收对象也能产出结果；我们引用模块目的就是得到一种处理方法，而不是一个结果；这是一个误区；
+
+// 模块化返回的是处理的方法，而不是一个结果，运用返回的方法，可以得到我们想要的结果；  刚才的误区就在于想直接利用require模块就得到结果-----就像一个机器没有进料口，不可能会返回处理结果；其只能返回一个带具体方法的对象；而这个方法，即可以接受数据，又也可以产出结果；
+/***********具体的应用*****************************************/ 
+
+conponent.on('click',function(params){
+    require(['option.js'],function(object){
+        var option = object.initOption(params.data[i]); //获取option对象；
+
+        require(['drawchart.js'],function(object){
+            object.draw(option,dom);  //完成绘图 dom是要传入的实参；
+        })
+    })
+  
+})
+
+// option.js
+define(['$'],function($){
+    var obj = {};
+    obj.initOption = function(data){
+        .....
+        return data;
+    }
+    return obj;
+})
+
+// drawchart.js // 或每个图形都细分一下
+define(['echarts'],function(echarts){
+    var obj = {};
+    obj.draw = function(option,dom){
+        var mycharts = echarts.init(dom);
+        myecharts.setOption(option);
+    }
+
+})
+
+// 这样写下来，就很舒服了，这才是模块编程的实质吧；！！！！！！！！！！！！！！
+
+
+/***************************************结论****************************/ 
+```
+
+
+
+
+
+
+
+
+
+
+```js
 // data.js  
 // 用来接收与返回数据；数据返回好返回，关键是要接收的数据从哪来；
 
