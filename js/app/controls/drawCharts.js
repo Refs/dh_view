@@ -26,10 +26,9 @@ define(["echarts","app/models/chartsOption","BMap","view-theme"], function(EChar
                     mychart.setOption({
                         bmap: {
                             center: [params.data[0], params.data[1]],
-                            zoom: 25,
+                            zoom: 40,
                         }
                     });
-
                     // 此处重绘 外面的六个图，所用到的信息，及当前电站的信息；
                 }
             }

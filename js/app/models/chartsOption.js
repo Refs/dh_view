@@ -14,17 +14,17 @@ define(["jquery"], function ($) {
                 return color[i];
             }
 
-            // heFei base station coordinate 
+            // company base station coordinate 
             var baseStationCoordinate = [117.282329,31.929392];
 
             // bmap center coordinate array
-            var bmapCenter = [121.4648, 31.2891];
+            var bmapCenter = [104.114129, 37.550339];
 
             // bmap scale
             var bmapZoom = 5;
 
             //  if wheel could scale bmap; if set true ,that cam cause a bug, when bmap be reseted to original size ; scatter will deflect it's position setted by me ;
-            var isbmaproam = true;
+            var isbmaproam = false;
 
             // map-style json
             var bmapStyleJson = {
