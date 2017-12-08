@@ -318,3 +318,7 @@ function drawBmpEcharts($, ECharts) {
 
     var bmap = mychart.getModel().getComponent('bmap').getBMap();
 }
+
+
+
+// 一是要在括号与字符串之间快速的移动，二是可以快速的选择，从而可以快速的替换；
