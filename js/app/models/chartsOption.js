@@ -15,7 +15,7 @@ define(["jquery"], function ($) {
             }
 
             // heFei base station coordinate 
-            var baseStationCoordinate = [117.29, 32.0581];
+            var baseStationCoordinate = [117.282329,31.929392];
 
             // bmap center coordinate array
             var bmapCenter = [121.4648, 31.2891];
@@ -23,7 +23,7 @@ define(["jquery"], function ($) {
             // bmap scale
             var bmapZoom = 5;
 
-            //  if wheel could scale bmap
+            //  if wheel could scale bmap; if set true ,that cam cause a bug, when bmap be reseted to original size ; scatter will deflect it's position setted by me ;
             var isbmaproam = true;
 
             // map-style json

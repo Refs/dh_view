@@ -277,6 +277,23 @@ echarts2.0目录里面，在bmap扩展中有两个文件，一个是bmap.js 一�
 
 *   由于自己不熟，就先入为主的认为getComponent() 并不是针对bmap而言的，getModel获取的是option,而 getModel().getComponent()获取的是option 内部的组件；类似geo grid timeline series 等；bmap只是其中一个；而getMap()是bmap组件特有的一个方法； 这样一条路下来，就通了；
 
+
+* bmap中最深的坑：roam属性；
+
+![bmap-roam-bug](./imgs/bmap-roam-bug.png)
+
+```js
+    bmap: {
+        roam: true,
+    }
+    // roam属性开启之后，会有一个bug: 单击scatter 地图会
+
+    // 原因是事件冲突，双击鼠标除了会触发自己绑定的事件之外，同样也会触发roam;这样就会导致，自己不想要的效果；重新返回到原始的视图时候，scatter 会偏离 其 应有的位置；而且是双击那地方，就会出现在哪个地方；
+
+```
+
+
+
 * ecahrts 地图压盖 未能实现； https://github.com/ecomfe/echarts/issues/5935
 
 
