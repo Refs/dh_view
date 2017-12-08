@@ -1,0 +1,82 @@
+// Import the fonts
+@font-face {
+    font-family: 'dh font';
+    src: url('@{icon-font-path}@{icon-font-name}.eot');
+    src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+    url('@{icon-font-path}@{icon-font-name}.woff2') format('woff2'),
+    url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+    url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+    url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}
+
+
+
+.dh-font {
+    font-family: 'dh font';
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dh-quanping1 {
+    &:before {
+        content: "\e66d";
+    }
+}
+
+.dh-eryanghuatan {
+    &:before {
+        content: "\e951";
+    }
+}
+
+.dh-eryanghualiu {
+    &:before {
+        content: "\e616";
+    }
+}
+
+.dh-licheng1 {
+    &:before {
+        content: "\e64f";
+    }
+}
+
+.dh-gushumingmu {
+    &:before {
+        content: "\e614";
+    }
+}
+
+@font-face {
+    font-family: "zzgfjh";
+    src: url("@{zzgfjh-font-path}@{zzgfjh-font-name}.eot"); /* IE9 */
+    src: url("@{zzgfjh-font-path}@{zzgfjh-font-name}.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("@{zzgfjh-font-path}@{zzgfjh-font-name}.woff") format("woff"), /* chrome、firefox */
+    url("@{zzgfjh-font-path}@{zzgfjh-font-name}.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("@{zzgfjh-font-path}@{zzgfjh-font-name}.svg#@{zzgfjh-font-svg-id}") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+// @{zzgfjh-font-path}@{zzgfjh-font-name}
+
+@font-face {
+    font-family: "zzgfshct";
+    src: url("@{zzgfshct-font-path}@{zzgfshct-font-name}.eot"); /* IE9 */
+    src: url("@{zzgfshct-font-path}@{zzgfshct-font-name}.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("@{zzgfshct-font-path}@{zzgfshct-font-name}.woff") format("woff"), /* chrome、firefox */
+    url("@{zzgfshct-font-path}@{zzgfshct-font-name}.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("@{zzgfshct-font-path}@{zzgfshct-font-name}.svg#@{zzgfshct-font-svg-id}") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+// @{zzgfshct-font-path}@{zzgfshct-font-name}

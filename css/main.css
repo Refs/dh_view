@@ -29,13 +29,93 @@
 .dh-gushumingmu:before {
   content: "\e614";
 }
+@font-face {
+  font-family: "zzgfjh";
+  src: url("../fonts/zzgfjh_fonts/zzgfjh.eot");
+  /* IE9 */
+  src: url("../fonts/zzgfjh_fonts/zzgfjh.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/zzgfjh_fonts/zzgfjh.woff") format("woff"), /* chrome、firefox */ url("../fonts/zzgfjh_fonts/zzgfjh.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */ url("../fonts/zzgfjh_fonts/zzgfjh.svg#fonteditor") format("svg");
+  /* iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "zzgfshct";
+  src: url("../fonts/zzgfshct_fonts/zzgfshct.eot");
+  /* IE9 */
+  src: url("../fonts/zzgfshct_fonts/zzgfshct.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/zzgfshct_fonts/zzgfshct.woff") format("woff"), /* chrome、firefox */ url("../fonts/zzgfshct_fonts/zzgfshct.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */ url("../fonts/zzgfshct_fonts/zzgfshct.svg#fonteditor") format("svg");
+  /* iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}
 body {
   position: relative;
   background-color: #004c58;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 #main {
-  /* position: relative; */
   height: 1080px !important;
   width: 1920px !important;
+}
+#view_left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 145px;
+  padding-bottom: 13px;
+  padding-left: 83px;
+  margin-bottom: 0px;
+  width: 564px;
+  height: 1081px;
+  background: url(../images/dh-view.png) no-repeat center;
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+#view_left li {
+  height: 264px;
+  width: 481px;
+  margin-bottom: 44px;
+  border: 1px solid gray;
+}
+#view_left li > p.li1-p1 {
+  height: 92px;
+  line-height: 92px;
+  padding-left: 45px;
+  font-family: "zzgfshct", "Microsoft YaHei";
+  font-size: 30px;
+  font-weight: 500;
+  color: #05ecfb;
+  margin-bottom: 0px;
+}
+#view_left li > p.li1-p2 {
+  height: 109px;
+  line-height: 99px;
+  padding-left: 45px;
+  font-family: "zzgfjh", "Microsoft YaHei";
+  font-size: 70px;
+  font-weight: 500;
+  color: #f29600;
+  margin-bottom: 0px;
+}
+#view_left li > p.li1-p3 > .li1-p3-span1 {
+  height: 63px;
+  line-height: 63px;
+  padding-left: 45px;
+  font-family: "Microsoft YaHei", "Microsoft YaHei";
+  font-size: 16px;
+  font-weight: 600;
+  color: #05ecfb;
+  margin-bottom: 0px;
+}
+#view_left li > p.li1-p3 > .li1-p3-span2 {
+  height: 63px;
+  line-height: 63px;
+  padding-left: 45px;
+  font-family: "Microsoft YaHei", "Microsoft YaHei";
+  font-size: 16px;
+  font-weight: 600;
+  color: #05ecfb;
+  margin-bottom: 0px;
+  margin-right: 58px;
 }
 /*# sourceMappingURL=./main.css.map */

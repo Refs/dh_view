@@ -1,0 +1,36 @@
+
+
+.outer-ul(@top,@left,@bgk-x,@bgk-y){
+    position: absolute;
+    top: @top;
+    left: @left;
+    padding-top: 145px;
+    padding-bottom:13px; 
+    padding-left: 83px;
+    margin-bottom: 0px;
+    width: 564px;
+    height: 1081px;
+    background: url(../images/dh-view.png) no-repeat center;
+    // background-position: 0px 0px;
+    background-position-x: @bgk-x;
+    background-position-y: @bgk-y;
+}
+
+.outer-ul-li(){
+    height: 264px;
+    width: 481px;
+    margin-bottom: 44px;
+    // background-color: @color-navy;
+    border: 1px solid gray;
+}
+
+.view-p(@height,@line-height,@padding-left,@font-family,@font-size,@font-weight,@color){
+    height: @height;
+    line-height: @line-height;
+    padding-left: @padding-left;
+    font-family: @font-family,@font-yahei;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: @color;
+    margin-bottom: 0px;
+}
