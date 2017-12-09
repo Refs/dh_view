@@ -309,6 +309,46 @@ define(["jquery"], function ($) {
             };
             return option;
         };
+
+    obj.drawLeftMiddleOption = function(dataUrl){
+        var option = {
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            
+                }
+            },
+            grid: {
+                top:'2%',
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '30%',
+                    data:[10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
+        };
+        return option;
+    }
     
     return obj;
 });

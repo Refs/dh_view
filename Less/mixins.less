@@ -34,3 +34,66 @@
     color: @color;
     margin-bottom: 0px;
 }
+
+.chart-div(){
+    height: 192px;
+    width: 100%;
+}
+
+.chart-menu(@menu-top,@menu-left){
+    position: absolute;
+    top: @menu-top;
+    left: @menu-left;
+}
+
+.chart-menu-title(@height,@line-height,@width,@background-color,@border-radius,@font-size,@color,@margin-top,@z-index){
+    position: relative;
+    height: @height;
+    line-height: @line-height;
+    width: @width;
+    cursor: pointer;
+    background-color: @background-color;
+    border-radius:@border-radius;
+    font-size: @font-size;
+    color: @color;
+    margin-top: @margin-top;
+    text-align: center;
+    z-index: @z-index;
+}
+
+.chart-menu-ul(@top,@right,@z-index,@width,@padding-top,@padding-right,@padding-bottom,@padding-left,@border-bottom-left-radius,@border-bottom-right-radius,@background-color,@opacity){
+    position: absolute;
+    top: @top;
+    right: @right;
+    z-index: @z-index;
+    width: @width;
+    padding-top: @padding-top;
+    padding-right: @padding-right;
+    padding-bottom: @padding-bottom;
+    padding-left : @padding-left;
+    
+    border-bottom-left-radius: @border-bottom-left-radius;
+    border-bottom-right-radius: @border-bottom-right-radius;
+    background-color: @background-color;
+    opacity: @opacity;
+   
+}
+
+.chart-menu-ul-li(@height,@line-height,@color,@font-size){
+    height: @height;
+    padding-right: 9px;
+
+    cursor: pointer;
+    line-height: @line-height;
+
+    text-align: center;
+    // text-indent: 8px;
+    color: @color;
+    font-size: 12px;
+    -webkit-transform:scale(0.8);
+    display: block;
+}
+
+
+
+

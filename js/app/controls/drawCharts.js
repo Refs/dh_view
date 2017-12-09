@@ -14,7 +14,7 @@ define(["echarts","app/models/chartsOption","BMap","view-theme"], function(EChar
         }));
         bmap.disableDoubleClickZoom()
         bmap.addEventListener("dblclick", function (e) {
-            var option = chartsOption.drawBmapChartOption(defultSt);
+            // var option = chartsOption.drawBmapChartOption(defultSt);
             mychart.setOption(option);
             // 重绘外面六个图 数据是默认的总数据；
         });
@@ -35,6 +35,13 @@ define(["echarts","app/models/chartsOption","BMap","view-theme"], function(EChar
         
         });
 
+    }
+    obj.drawLeftMiddleChart = function(dom){
+        var defultSt = "";
+        var mychart = ECharts.init(dom,"view-theme");
+        // defultSt is key to search remote sql; 
+        var option = chartsOption.drawLeftMiddleOption(defultSt);
+        mychart.setOption(option);
     }
     return obj;
 });

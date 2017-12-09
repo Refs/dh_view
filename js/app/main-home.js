@@ -1,10 +1,25 @@
 define(['jquery','app/controls/drawCharts'], function($,drawCharts){
-    var dom = $('#main')[0];
-    drawCharts.drawBmapChart(dom);
+
+    $('.chart-toggle-menu ul').on('show:toggle',function(){
+        var self = $(this);
+        if(self.is(":hidden")){
+            self.slideDown();
+        }else{
+            self.slideUp();
+        }
+    });
+    $('.chart-toggle-menu').hover(function(){
+        $(this).find('ul').trigger('show:toggle');
+    });
+    $('.chart-toggle-menu ul li').click(function(){
+        $(this).parent('ul').trigger('show:toggle')
+        event.stopPropagation();
+    });
+
+    drawCharts.drawBmapChart($('#main')[0]);
+    drawCharts.drawLeftMiddleChart($('#left-li2-chart-div')[0]);
 });
 
 
 
 
-
-// 一是要在括号与字符串之间快速的移动，二是可以快速的选择，从而可以快速的替换；

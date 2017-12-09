@@ -71,13 +71,13 @@ body {
   background-position-x: 0px;
   background-position-y: 0px;
 }
-#view_left li {
+#view_left li.left-li1 {
   height: 264px;
   width: 481px;
   margin-bottom: 44px;
   border: 1px solid gray;
 }
-#view_left li > p.li1-p1 {
+#view_left li.left-li1 > p.li1-p1 {
   height: 92px;
   line-height: 92px;
   padding-left: 45px;
@@ -87,7 +87,7 @@ body {
   color: #05ecfb;
   margin-bottom: 0px;
 }
-#view_left li > p.li1-p2 {
+#view_left li.left-li1 > p.li1-p2 {
   height: 109px;
   line-height: 99px;
   padding-left: 45px;
@@ -97,7 +97,7 @@ body {
   color: #f29600;
   margin-bottom: 0px;
 }
-#view_left li > p.li1-p3 > .li1-p3-span1 {
+#view_left li.left-li1 > p.li1-p3 > .li1-p3-span1 {
   height: 63px;
   line-height: 63px;
   padding-left: 45px;
@@ -107,7 +107,7 @@ body {
   color: #05ecfb;
   margin-bottom: 0px;
 }
-#view_left li > p.li1-p3 > .li1-p3-span2 {
+#view_left li.left-li1 > p.li1-p3 > .li1-p3-span2 {
   height: 63px;
   line-height: 63px;
   padding-left: 45px;
@@ -117,5 +117,71 @@ body {
   color: #05ecfb;
   margin-bottom: 0px;
   margin-right: 58px;
+}
+#view_left li.left-li2 {
+  position: relative;
+  height: 264px;
+  width: 481px;
+  margin-bottom: 44px;
+  border: 1px solid gray;
+}
+#view_left li.left-li2 > p.li2-p1 {
+  height: 72px;
+  line-height: 72px;
+  padding-left: 45px;
+  font-family: "zzgfshct", "Microsoft YaHei";
+  font-size: 30px;
+  font-weight: 500;
+  color: #05ecfb;
+  margin-bottom: 0px;
+}
+#view_left li.left-li2 > #left-li2-chart-div {
+  height: 192px;
+  width: 100%;
+}
+#view_left li.left-li2 > .chart-toggle-menu {
+  position: absolute;
+  top: 9px;
+  left: 131px;
+}
+#view_left li.left-li2 > .chart-toggle-menu > .menu-title {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  width: 80px;
+  cursor: pointer;
+  background-color: #05ecfb;
+  border-radius: 30px;
+  font-size: 12px;
+  color: white;
+  margin-top: 3px;
+  text-align: center;
+  z-index: 10;
+}
+#view_left li.left-li2 > .chart-toggle-menu > ul {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  z-index: 9;
+  width: 80px;
+  padding-top: 15px;
+  padding-right: 0px;
+  padding-bottom: 8px;
+  padding-left: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #05ecfb;
+  opacity: 0.9;
+}
+#view_left li.left-li2 > .chart-toggle-menu > ul > li {
+  height: 25px;
+  padding-right: 9px;
+  cursor: pointer;
+  line-height: 25px;
+  text-align: center;
+  color: #05ecfb;
+  font-size: 12px;
+  -webkit-transform: scale(0.8);
+  display: block;
 }
 /*# sourceMappingURL=./main.css.map */
