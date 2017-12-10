@@ -1,3 +1,15 @@
+// Utilities
+@import url(./mixins/font-scale.less);
+
+// Components
+// @import url(./mixins/components.less);
+
+// skins
+// @import url(./mixins/skins.less);
+
+// Layout
+// @import url(./mixins/layout.less);
+
 
 
 .outer-ul(@top,@left,@bgk-x,@bgk-y){
@@ -24,10 +36,11 @@
     border: 1px solid gray;
 }
 
-.view-p(@height,@line-height,@padding-left,@font-family,@font-size,@font-weight,@color){
+
+.view-p(@height,@line-height,@margin-left,@font-family,@font-size,@font-weight,@color){
     height: @height;
     line-height: @line-height;
-    padding-left: @padding-left;
+    margin-left: @margin-left;
     font-family: @font-family,@font-yahei;
     font-size: @font-size;
     font-weight: @font-weight;
@@ -36,7 +49,7 @@
 }
 
 .chart-div(){
-    height: 192px;
+    height: 100%;
     width: 100%;
 }
 
@@ -45,6 +58,7 @@
     top: @menu-top;
     left: @menu-left;
 }
+
 
 .chart-menu-title(@height,@line-height,@width,@background-color,@border-radius,@font-size,@color,@margin-top,@z-index){
     position: relative;
@@ -61,39 +75,42 @@
     z-index: @z-index;
 }
 
-.chart-menu-ul(@top,@right,@z-index,@width,@padding-top,@padding-right,@padding-bottom,@padding-left,@border-bottom-left-radius,@border-bottom-right-radius,@background-color,@opacity){
+.chart-menu-ul(@top,@right,@background-color,@opacity){
     position: absolute;
     top: @top;
     right: @right;
-    z-index: @z-index;
-    width: @width;
-    padding-top: @padding-top;
-    padding-right: @padding-right;
-    padding-bottom: @padding-bottom;
-    padding-left : @padding-left;
-    
-    border-bottom-left-radius: @border-bottom-left-radius; 
-    border-bottom-right-radius: @border-bottom-right-radius;
+    z-index: 9;
+    width: 80px;
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    padding-left : 0px;
+
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
     background-color: @background-color;
     opacity: @opacity;
    
 }
 
-.chart-menu-ul-li(@height,@line-height,@color,@font-size){
-    height: @height;
-    padding-right: 9px;
-
+.chart-menu-ul-li(@color,@background-color){
+    height: 25px;
     cursor: pointer;
-    line-height: @line-height;
-
+    line-height: 25px;
     text-align: center;
-    // text-indent: 8px;
     color: @color;
+    opacity: 0.8;
     font-size: 12px;
-    -webkit-transform:scale(0.8);
     display: block;
+    &:hover{
+        background:@background-color;
+        border-radius: 12px;
+    };
 }
 
 
 
+
+
+// Utilities
 

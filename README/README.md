@@ -167,6 +167,49 @@ vscode 全局配置：
 
 ```
 
+```less
+// mixins.less
+// Utilities
+@import "mixins/hide-text.less";
+@import "mixins/opacity.less";
+@import "mixins/image.less";
+@import "mixins/labels.less";
+@import "mixins/reset-filter.less";
+@import "mixins/resize.less";
+@import "mixins/responsive-visibility.less";
+@import "mixins/size.less";
+@import "mixins/tab-focus.less";
+@import "mixins/reset-text.less";
+@import "mixins/text-emphasis.less";
+@import "mixins/text-overflow.less";
+@import "mixins/vendor-prefixes.less";
+
+// Components
+@import "mixins/alerts.less";
+@import "mixins/buttons.less";
+@import "mixins/panels.less";
+@import "mixins/pagination.less";
+@import "mixins/list-group.less";
+@import "mixins/nav-divider.less";
+@import "mixins/forms.less";
+@import "mixins/progress-bar.less";
+@import "mixins/table-row.less";
+
+// Skins
+@import "mixins/background-variant.less";
+@import "mixins/border-radius.less";
+@import "mixins/gradients.less";
+
+// Layout
+@import "mixins/clearfix.less";
+@import "mixins/center-block.less";
+@import "mixins/nav-vertical-align.less";
+@import "mixins/grid-framework.less";
+@import "mixins/grid.less";
+
+```
+
+
 
 ### 设置字体less
 
@@ -185,6 +228,15 @@ vscode 全局配置：
 
 //   其中 id 指的就是icon-font-svg-id
 ```
+
+
+### less 真正的使用思路
+
+* 我们不仅 要学会像bootstrap一样去写代码，而且要学会像bootstrap一样去用代码-- 即组件化编程；
+
+> 我们可以编写自己的一套组件（html），封装一套组件对应的样式类，而在使用的时候，直接将 组件（html）片段拉过去；将组件对应的样式的类加上去就可以了，我们即然像bootstrap一样去封装，我们就可以像bootstrap一样的方式去使用；------ 组件化样式编程；
+
+> 如果requirejs让我们明白了，模块化js编程；那么bootstrap就让我明白了，组件化编程； 两个一个是组件，一个是模块；使用起来都差不多；
 
 
 
@@ -718,3 +770,19 @@ var scatterData = (function () {
 })(dataUrl);
 // 自执行函数才是 正确的写法；
 ```
+
+
+## 控制层的含义
+
+> 控制层 顾名思义就是控制模块去做事情，遇到事就去找model ; model就是模块层了；
+
+
+
+
+
+
+
+
+
+
+

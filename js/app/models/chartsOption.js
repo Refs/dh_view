@@ -317,8 +317,12 @@ define(["jquery"], function ($) {
                 axisPointer : {            
                 }
             },
+            legend: {
+                top:'12%',
+                data: ['直接访问']
+            },
             grid: {
-                top:'2%',
+                top:'30%',
                 left: '3%',
                 right: '4%',
                 bottom: '3%',

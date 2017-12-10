@@ -3,6 +3,6 @@
         "sourceMap": true,  
         "main": ["${workspaceRoot}\\Less\\main.less"],
         "out": false,
-        "autoprefixer": "> 5%"
+        "autoprefixer": "> 1%"
     }
 }
