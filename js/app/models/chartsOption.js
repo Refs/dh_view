@@ -319,6 +319,7 @@ define(["jquery"], function ($) {
             },
             legend: {
                 top:'12%',
+                left: '60%',
                 data: ['直接访问']
             },
             grid: {

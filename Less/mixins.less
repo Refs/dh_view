@@ -1,73 +1,63 @@
 // Utilities
 @import url(./mixins/font-scale.less);
-
 // Components
 // @import url(./mixins/components.less);
-
 // skins
 // @import url(./mixins/skins.less);
-
 // Layout
 // @import url(./mixins/layout.less);
-
-
-
-.outer-ul(@top,@left,@bgk-x,@bgk-y){
+.outer-ul(@top, @left, @bgk-x, @bgk-y) {
     position: absolute;
     top: @top;
     left: @left;
     padding-top: 145px;
-    padding-bottom:13px; 
+    padding-bottom: 13px;
     padding-left: 83px;
     margin-bottom: 0px;
     width: 564px;
     height: 1081px;
-    background: url(../images/dh-view.png) no-repeat center;
-    // background-position: 0px 0px;
+    background: url(../images/dh-view.png) no-repeat center; // background-position: 0px 0px;
     background-position-x: @bgk-x;
     background-position-y: @bgk-y;
 }
 
-.outer-ul-li(){
+.outer-ul-li() {
     height: 264px;
     width: 481px;
-    margin-bottom: 44px;
-    // background-color: @color-navy;
+    margin-bottom: 44px; // background-color: @color-navy;
     border: 1px solid gray;
 }
 
-
-.view-p(@height,@line-height,@margin-left,@font-family,@font-size,@font-weight,@color){
+.view-p(@height, @line-height, @margin-left, @font-family, @font-size, @font-weight, @color) {
     height: @height;
     line-height: @line-height;
     margin-left: @margin-left;
-    font-family: @font-family,@font-yahei;
+    font-family: @font-family, @font-yahei;
     font-size: @font-size;
     font-weight: @font-weight;
     color: @color;
     margin-bottom: 0px;
 }
 
-.chart-div(){
+.chart-div() {
     height: 100%;
     width: 100%;
 }
 
-.chart-menu(@menu-top,@menu-left){
+.chart-menu(@menu-top, @menu-left) {
     position: absolute;
     top: @menu-top;
     left: @menu-left;
 }
 
-
-.chart-menu-title(@height,@line-height,@width,@background-color,@border-radius,@font-size,@color,@margin-top,@z-index){
+.chart-menu-title(@height, @line-height, @width, @background-color, @border-radius, @font-size, @color, @margin-top, @z-index) {
     position: relative;
     height: @height;
     line-height: @line-height;
     width: @width;
     cursor: pointer;
     background-color: @background-color;
-    border-radius:@border-radius;
+    border-radius: @border-radius;
     font-size: @font-size;
     color: @color;
     margin-top: @margin-top;
@@ -75,7 +65,7 @@
     z-index: @z-index;
 }
 
-.chart-menu-ul(@top,@right,@background-color,@opacity){
+.chart-menu-ul(@top, @right, @background-color, @opacity) {
     position: absolute;
     top: @top;
     right: @right;
@@ -84,16 +74,14 @@
     padding-top: 15px;
     padding-right: 0px;
     padding-bottom: 8px;
-    padding-left : 0px;
-
-    border-bottom-left-radius: 20px; 
+    padding-left: 0px;
+    border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: @background-color;
     opacity: @opacity;
-   
 }
 
-.chart-menu-ul-li(@color,@background-color){
+.chart-menu-ul-li(@color, @background-color) {
     height: 25px;
     cursor: pointer;
     line-height: 25px;
@@ -102,15 +90,38 @@
     opacity: 0.8;
     font-size: 12px;
     display: block;
-    &:hover{
-        background:@background-color;
+    &:hover {
+        background: @background-color;
         border-radius: 12px;
-    };
+    }
+    ;
 }
 
 
+// <div  class="detail-btn">
+// <i class="dh-font dh-eryanghualiu"></i>
+// <span>查看详情</span>
+// </div>
 
-
+.chart-detai-btn(@top,@right) {
+    position: absolute;
+    top:@top;
+    right: @right;
+    cursor: pointer;
+    font-size: 20px;
+    &>i {
+        display: block;
+        text-align: center;
+        color: @color-mid-navy;
+        &:hover {
+            color: @color-navy;
+        }
+    }
+    &>span {
+        visibility: hidden;
+        font-size: 12px;
+        color: @color-navy;
+    }
+}
 
 // Utilities
-

@@ -1,6 +1,6 @@
 body {
     position: relative;
-    background-color: @color-high-navy;
+    // background-color: @color-high-navy;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -44,12 +44,13 @@ body {
             .chart-div()
         };
         &>.chart-toggle-menu{
-            .chart-menu(19px,327px);
+            .chart-menu(20px,170px);
             &>.menu-title{
-                .chart-menu-title(30px,30px,80px,@color-navy,30px,12px,white,3px,10);
+                .chart-menu-title(30px,30px,80px,@color-mid-navy,30px,12px,white,3px,10);
             };
             &>ul {
                 .chart-menu-ul(20px,0px,@color-high-navy,0.9);
+                opacity: 0.9;
                 &>li{
                     .chart-menu-ul-li(white,@color-navy);
                     &>span{
@@ -59,25 +60,7 @@ body {
             }
         }
         &>.detail-btn{
-            position: absolute;
-            cursor: pointer;
-            top: 12%;
-            right: 8%;
-            font-size: 20px;
-            &>i{
-                
-                display: block;
-                text-align: center;
-                color: #05ecfb;
-                &:hover{
-                    color: red;
-                }
-            }
-            &>span{
-                visibility:hidden;
-                font-size: 12px;
-                color: red;
-            }
+           .chart-detai-btn(12%,4%);
         }
     }
 }

@@ -1,4 +1,4 @@
-define(['jquery','app/controls/drawCharts'], function($,drawCharts){
+define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
 
     var ulExpand = false;
     $('.chart-toggle-menu').hover(function(){
@@ -22,11 +22,27 @@ define(['jquery','app/controls/drawCharts'], function($,drawCharts){
         
     });
 
+    var spanExpand = false;
     $('.detail-btn i').hover(function(){
         var self = $(this);
-        // visibility
-        self.siblings('span').css("visibility","visible");
+        
+        if(!spanExpand){
+            self.siblings('span').css("visibility","visible");
+            spanExpand = true;
+        }else{
+            self.siblings('span').css("visibility","hidden");
+            spanExpand = false;
+        }
+
     });
+
+    $('#order_list_modal').modal('show');
+    
+    // $('.detail-btn i').on('click',function(){
+    //     $('#order_list_modal').modal('show');
+    // });
+
+    
 
     drawCharts.drawBmapChart($('#main')[0]);
     drawCharts.drawLeftMiddleChart($('#left-li2-chart-div')[0]);
