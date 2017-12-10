@@ -245,4 +245,40 @@ body {
   margin-bottom: 0px;
   text-align: center;
 }
+#order_list_modal .order-list-modal-body {
+  margin: 34px 253px 106px 253px;
+  padding: 25px 124px;
+}
+#order_list_modal .order-list-modal-body > table > thead th {
+  font-size: 18px;
+  font-weight: 550;
+  color: #05ecfb;
+  border-bottom: 1px solid #82bcc8;
+  width: 33%;
+}
+#order_list_modal .order-list-modal-body > table > thead th:nth-child(2) {
+  text-align: center;
+}
+#order_list_modal .order-list-modal-body > table > thead th:nth-child(3) {
+  text-align: center;
+}
+#order_list_modal .order-list-modal-body > table > tbody td {
+  font-size: 14px;
+  color: #05ecfb;
+  border-top: none;
+  border-bottom: 1px solid #82bcc8;
+  width: 33%;
+}
+#order_list_modal .order-list-modal-body > table > tbody td:nth-child(2) {
+  border-left: 1px solid #82bcc8;
+  border-right: 1px solid #82bcc8;
+  text-align: center;
+}
+#order_list_modal .order-list-modal-body > table > tbody td:nth-child(3) {
+  text-align: center;
+}
+#order_list_modal .modal-toggle-btn-left {
+  width: 20px;
+  height: 32px;
+}
 /*# sourceMappingURL=./main.css.map */

@@ -97,15 +97,13 @@
     ;
 }
 
-
 // <div  class="detail-btn">
 // <i class="dh-font dh-eryanghualiu"></i>
 // <span>查看详情</span>
 // </div>
-
-.chart-detai-btn(@top,@right) {
+.chart-detai-btn(@top, @right) {
     position: absolute;
-    top:@top;
+    top: @top;
     right: @right;
     cursor: pointer;
     font-size: 20px;
@@ -124,45 +122,84 @@
     }
 }
 
-
 // <div class="modal fade " tabindex="-1" role="dialog" id="order_list_modal">
 // <div class="modal-dialog" role="document">
 //   <div class="modal-content">
 //   </div>
 // </div>
 // </div>
-
-.view-modal(@padding-top,@width,@height,@img-path,@bp-x,@bp-y){
-      // because scroll bar's width is 14px;bootstrap add modal padding-left value but in this project wo have no scroll bar ,so we can set the  padding-left 0px;
+.view-modal(@padding-top, @width, @height, @img-path, @bp-x, @bp-y) {
+    // because scroll bar's width is 14px;bootstrap add modal padding-left value but in this project wo have no scroll bar ,so we can set the  padding-left 0px;
     // padding-left: 14px;
     padding-left: 0px;
-    &>.modal-dialog{
+    &>.modal-dialog {
         // to control modal posotion on y-axis;
-        padding-top: @padding-top;
-        // here could'not set value 100%; because modal can'n hide when click x-axis blank area; just set value equal to content;
+        padding-top: @padding-top; // here could'not set value 100%; because modal can'n hide when click x-axis blank area; just set value equal to content;
         width: @width;
     }
-    & .modal-content{
+    & .modal-content {
         width: @width;
-        height: @height;
-        // width: 1571px;
+        height: @height; // width: 1571px;
         // height: 877px;
-        background: @img-path no-repeat center;
-        // -175px -99px;
+        background: @img-path no-repeat center; // -175px -99px;
         background-position: @bp-x @bp-y;
         margin-left: 50%;
         left: -1/2 * @width;
-
-        &>.modal-header{
+        &>.modal-header {
             padding: 0px;
             border-bottom: none;
-            &>p{
-                .view-p(92px,122px,0px,@font-zzgfshct,@size-md,500,@color-yellow);
+            &>p {
+                .view-p(92px, 122px, 0px, @font-zzgfshct, @size-md, 500, @color-yellow);
                 text-align: center;
             }
         }
-    
+        ;
     }
+}
+
+// this little component fecth out ;
+.view-modal-body(@padding-y, @padding-x) {
+    margin: 34px 253px 106px 253px;
+    padding: @padding-y @padding-x;
+}
+
+.view-table (@th-font-size,@th-font-weight,@td-font-size) {
+    &>thead {
+        & th {
+            font-size: @th-font-size;
+            font-weight: @th-font-weight;
+            color: @color-navy;
+            border-bottom: 1px solid @color-table-border-color;
+            width: 33%;
+            &:nth-child(2) {
+                text-align: center;
+            }
+            ;
+            &:nth-child(3) {
+                text-align: center;
+            }
+        }
+    }
+    ;
+    &>tbody {
+        & td {
+            font-size: @td-font-size;
+            color: @color-navy;
+            border-top: none;
+            border-bottom: 1px solid @color-table-border-color;
+            width: 33%;
+            &:nth-child(2) {
+                border-left: 1px solid @color-table-border-color;
+                border-right: 1px solid @color-table-border-color;
+                text-align: center;
+            };
+           
+            &:nth-child(3) {
+                text-align: center;
+            }
+        }
+    }
+    ;
 }
 
 // Utilities
