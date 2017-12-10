@@ -124,4 +124,33 @@
     }
 }
 
+
+// <div class="modal fade " tabindex="-1" role="dialog" id="order_list_modal">
+// <div class="modal-dialog" role="document">
+//   <div class="modal-content">
+//   </div>
+// </div>
+// </div>
+
+.view-modal(@padding-top,@width,@height,@img-path,@bp-x,@bp-y){
+    padding-left: 0px;
+    &>.modal-dialog{
+        // padding-top: 30px;
+        padding-top: @padding-top;
+        width: 100%;
+    }
+    & .modal-content{
+        width: @width;
+        height: @height;
+        // width: 1571px;
+        // height: 877px;
+        background: @img-path no-repeat center;
+        // -175px -99px;
+        background-position: @bp-x @bp-y;
+        margin-left: 50%;
+        left: -1/2 * @width;
+    
+    }
+}
+
 // Utilities

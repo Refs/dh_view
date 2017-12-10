@@ -214,4 +214,19 @@ body {
   font-size: 12px;
   color: #05ecfb;
 }
+#order_list_modal {
+  padding-left: 0px;
+}
+#order_list_modal > .modal-dialog {
+  padding-top: 30px;
+  width: 100%;
+}
+#order_list_modal .modal-content {
+  width: 1570px;
+  height: 877px;
+  background: url(../images/dh-order-list-modal.png) no-repeat center;
+  background-position: -175px -99px;
+  margin-left: 50%;
+  left: -785px;
+}
 /*# sourceMappingURL=./main.css.map */
