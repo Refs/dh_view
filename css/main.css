@@ -51,6 +51,7 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-family: "Microsoft YaHei";
 }
 #main {
   height: 1080px !important;
@@ -219,7 +220,7 @@ body {
 }
 #order_list_modal > .modal-dialog {
   padding-top: 30px;
-  width: 100%;
+  width: 1570px;
 }
 #order_list_modal .modal-content {
   width: 1570px;
@@ -228,5 +229,20 @@ body {
   background-position: -175px -99px;
   margin-left: 50%;
   left: -785px;
+}
+#order_list_modal .modal-content > .modal-header {
+  padding: 0px;
+  border-bottom: none;
+}
+#order_list_modal .modal-content > .modal-header > p {
+  height: 92px;
+  line-height: 122px;
+  margin-left: 0px;
+  font-family: "zzgfshct", "Microsoft YaHei";
+  font-size: 30px;
+  font-weight: 500;
+  color: #f29600;
+  margin-bottom: 0px;
+  text-align: center;
 }
 /*# sourceMappingURL=./main.css.map */

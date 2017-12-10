@@ -23,7 +23,7 @@
 
   <!-- main start -->
   <div id="main">
-    
+
   </div>
   <!-- main end -->
 
@@ -40,59 +40,80 @@
       </p>
     </li>
     <li class="left-li2">
-        <p class="li2-p1">电站排名</p>
-        <div id="left-li2-chart-div"></div>
-        <div class="chart-toggle-menu">
-						<div class="menu-title">
-							<span id="currentcheck">日发电量排名</span>
-							<b></b>
-            </div>
-						<ul  style="display: none;" class="list-unstyled">
-							<li id="day">
-                <span>日发电量排名</span>
-              </li>
-							<li id="month">
-                <span>电站性能排名</span>
-              </li>
-						</ul>
+      <p class="li2-p1">电站排名</p>
+      <div id="left-li2-chart-div"></div>
+      <div class="chart-toggle-menu">
+        <div class="menu-title">
+          <span id="currentcheck">日发电量排名</span>
+          <b></b>
         </div>
-        <div id="btn_Li2_modal" class="detail-btn">
-          <i class="dh-font dh-eryanghualiu"></i>
-          <span>查看详情</span>
-        </div>
+        <ul style="display: none;" class="list-unstyled">
+          <li id="day">
+            <span>日发电量排名</span>
+          </li>
+          <li id="month">
+            <span>电站性能排名</span>
+          </li>
+        </ul>
+      </div>
+      <div id="btn_Li2_modal" class="detail-btn">
+        <i class="dh-font dh-eryanghualiu"></i>
+        <span>查看详情</span>
+      </div>
     </li>
     <li class="left-li3">
-        <p class="li2-p1">发电趋势图</p>
-        <div id="left-li2-chart-div" ></div>
+      <p class="li2-p1">发电趋势图</p>
+      <div id="left-li2-chart-div"></div>
     </li>
   </ul>
-  
+
   <!-- left end -->
 
   <!-- order list modal start -->
   <div class="modal fade " tabindex="-1" role="dialog" id="order_list_modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          
-          <div class="modal-body">
-            <p>One fine body&hellip;</p>
-          </div>
-          
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">电站发电量排名</p>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>电站名称</th>
+                <th>昨日发电</th>
+                <th>电站当年累计发电</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>黄山民用3kw电站</td>
+                <td>11310度</td>
+                <td>194.63万度</td>
+
+              </tr>
+              <tr>
+                <td>山东德州光伏车棚20kw电站</td>
+                <td>11310度</td>
+                <td>194.63万度</td>
+
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
   <!-- order list modal end -->
 
   <!-- javascript ========================================= -->
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=b8vNnG37iSv0j3r5eLSHhHHIGG9GmngU"></script>
   <script src="./js/vendor/require.js"></script>
   <script type="text/javascript">
-    require(['./js/common.js'],function(){
+    require(['./js/common.js'], function () {
       require(['app/main-home']);
     })
   </script>
 </body>
+
 </html>
-
-
-

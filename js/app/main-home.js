@@ -38,9 +38,9 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
 
     $('#order_list_modal').modal('show');
     
-    // $('.detail-btn i').on('click',function(){
-    //     $('#order_list_modal').modal('show');
-    // });
+    $('.detail-btn i').on('click',function(){
+        $('#order_list_modal').modal('show');
+    });
 
     
 

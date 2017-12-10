@@ -16,7 +16,7 @@
     margin-bottom: 0px;
     width: 564px;
     height: 1081px;
-    background: url(../images/dh-view.png) no-repeat center; // background-position: 0px 0px;
+    background: @img-view no-repeat center; // background-position: 0px 0px;
     background-position-x: @bgk-x;
     background-position-y: @bgk-y;
 }
@@ -133,11 +133,14 @@
 // </div>
 
 .view-modal(@padding-top,@width,@height,@img-path,@bp-x,@bp-y){
+      // because scroll bar's width is 14px;bootstrap add modal padding-left value but in this project wo have no scroll bar ,so we can set the  padding-left 0px;
+    // padding-left: 14px;
     padding-left: 0px;
     &>.modal-dialog{
-        // padding-top: 30px;
+        // to control modal posotion on y-axis;
         padding-top: @padding-top;
-        width: 100%;
+        // here could'not set value 100%; because modal can'n hide when click x-axis blank area; just set value equal to content;
+        width: @width;
     }
     & .modal-content{
         width: @width;
@@ -149,6 +152,15 @@
         background-position: @bp-x @bp-y;
         margin-left: 50%;
         left: -1/2 * @width;
+
+        &>.modal-header{
+            padding: 0px;
+            border-bottom: none;
+            &>p{
+                .view-p(92px,122px,0px,@font-zzgfshct,@size-md,500,@color-yellow);
+                text-align: center;
+            }
+        }
     
     }
 }
