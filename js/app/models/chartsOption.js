@@ -354,6 +354,71 @@ define(["jquery"], function ($) {
         };
         return option;
     }
-    
+    obj.drawLeftBottomOption = function(dataUrl){
+        var option = {
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            
+                }
+            },
+            grid: {
+                top:'30%',
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            legend: {
+                data: ['累计发电量', '功率'],
+                y:15
+            },
+            xAxis: {
+                data: data.datas.categories
+            },
+            yAxis: [{
+                type: 'value',
+                name: '累计发电量(度)',
+                min: 0,
+
+                axisLabel: {
+                    formatter: '{value}'
+                }
+            }, {
+                type: 'value',
+                name: '功率(kw)',
+                min: 0,
+
+                axisLabel: {
+                    formatter: '{value}'
+                }
+            }],
+            series: [{
+                name: '累计发电量',
+                type: 'line',
+                areaStyle: {
+                    normal: {
+                        color: "#004983"
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#004983'
+                    }
+                },
+                data: data.datas.data1
+            }, {
+                name: '功率',
+                type: 'line',
+                yAxisIndex: 1,
+                itemStyle: {
+                    normal: {
+                        color: '#CD6600'
+                    }
+                },
+                data: data.datas.data4
+            }]
+        };
+        return option;
+    }
     return obj;
 });

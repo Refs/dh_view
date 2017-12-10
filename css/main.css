@@ -224,6 +224,102 @@ body {
   font-size: 12px;
   color: #05ecfb;
 }
+#view_left li.left-li3 {
+  position: relative;
+  height: 264px;
+  width: 481px;
+  margin-bottom: 44px;
+  border: 1px solid gray;
+}
+#view_left li.left-li3 > p.li3-p1 {
+  position: absolute;
+  height: 72px;
+  line-height: 72px;
+  margin-left: 45px;
+  font-family: "zzgfshct", "Microsoft YaHei";
+  font-size: 30px;
+  font-weight: 500;
+  color: #05ecfb;
+  margin-bottom: 0px;
+}
+#view_left li.left-li3 > #left-li3-chart-div {
+  height: 100%;
+  width: 100%;
+}
+#view_left li.left-li3 > .chart-toggle-menu {
+  position: absolute;
+  top: 20px;
+  left: 170px;
+}
+#view_left li.left-li3 > .chart-toggle-menu > .menu-title {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  width: 80px;
+  cursor: pointer;
+  background-color: #27bbee;
+  border-radius: 30px;
+  font-size: 16px;
+  color: white;
+  margin-top: 3px;
+  text-align: center;
+  z-index: 10;
+}
+#view_left li.left-li3 > .chart-toggle-menu > ul {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  z-index: 9;
+  width: 80px;
+  padding-top: 15px;
+  padding-right: 0px;
+  padding-bottom: 8px;
+  padding-left: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #004c58;
+  opacity: 0.9;
+}
+#view_left li.left-li3 > .chart-toggle-menu > ul > li {
+  height: 25px;
+  cursor: pointer;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  font-size: 12px;
+  display: block;
+}
+#view_left li.left-li3 > .chart-toggle-menu > ul > li:hover {
+  background: #05ecfb;
+  border-radius: 12px;
+}
+#view_left li.left-li3 > .chart-toggle-menu > ul > li > span {
+  display: block;
+  font-size: 12px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+#view_left li.left-li3 > .detail-btn {
+  position: absolute;
+  top: 12%;
+  right: 4%;
+  cursor: pointer;
+  font-size: 20px;
+}
+#view_left li.left-li3 > .detail-btn > i {
+  display: block;
+  text-align: center;
+  color: #27bbee;
+}
+#view_left li.left-li3 > .detail-btn > i:hover {
+  color: #05ecfb;
+}
+#view_left li.left-li3 > .detail-btn > span {
+  visibility: hidden;
+  font-size: 12px;
+  color: #05ecfb;
+}
 #order_list_modal {
   padding-left: 0px;
 }

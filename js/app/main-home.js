@@ -23,9 +23,8 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
     });
 
     var spanExpand = false;
-    $('.detail-btn i').hover(function(){
+    $('.left-li2 .detail-btn i').hover(function(){
         var self = $(this);
-        
         if(!spanExpand){
             self.siblings('span').css("visibility","visible");
             spanExpand = true;
@@ -36,9 +35,8 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
 
     });
 
-    $('#order_list_modal').modal('show');
-    
-    $('.detail-btn i').on('click',function(){
+    // $('#order_list_modal').modal('show');
+    $('.left-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
 
@@ -46,6 +44,7 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
 
     drawCharts.drawBmapChart($('#main')[0]);
     drawCharts.drawLeftMiddleChart($('#left-li2-chart-div')[0]);
+    drawCharts.drawLeftBottomChart($('#left-li3-chart-div')[0]);
 });
 
 

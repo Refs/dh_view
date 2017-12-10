@@ -43,5 +43,13 @@ define(["echarts","app/models/chartsOption","BMap","view-theme"], function(EChar
         var option = chartsOption.drawLeftMiddleOption(defultSt);
         mychart.setOption(option);
     }
+
+    obj.drawLeftBottomChart = function(dom){
+        var defultSt = "";
+        var mychart = ECharts.init(dom,"view-theme");
+        // defultSt is key to search remote sql; 
+        var option = chartsOption.drawLeftBottomOption(defultSt);
+        mychart.setOption(option);
+    }
     return obj;
 });

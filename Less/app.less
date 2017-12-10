@@ -10,79 +10,101 @@ body {
     width: 1920px !important;
 }
 
-
-#view_left{
-    .outer-ul(0px,0px,0px,0px);
-    li.left-li1{
+#view_left {
+    .outer-ul(0px, 0px, 0px, 0px);
+    li.left-li1 {
         .outer-ul-li();
-        &>p.li1-p1{
-            .view-p(92px,92px,45px,@font-zzgfshct,@size-md,500,@color-navy)
+        &>p.li1-p1 {
+            .view-p(92px, 92px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
         };
-        &>p.li1-p2{
-            .view-p(109px,99px,45px,@font-zzgfjh,@size-lg,500,@color-yellow)
+        &>p.li1-p2 {
+            .view-p(109px, 99px, 45px, @font-zzgfjh, @size-lg, 500, @color-yellow)
         };
-        &>p.li1-p3{
-            &>.li1-p3-span1{
-                .view-p(63px,63px,45px,@font-yahei,@size-sm,600,@color-navy);
+        &>p.li1-p3 {
+            &>.li1-p3-span1 {
+                .view-p(63px, 63px, 45px, @font-yahei, @size-sm, 600, @color-navy);
             };
-            &>.li1-p3-span2{
-                .view-p(63px,63px,45px,@font-yahei,@size-sm,600,@color-navy);
+            &>.li1-p3-span2 {
+                .view-p(63px, 63px, 45px, @font-yahei, @size-sm, 600, @color-navy);
                 margin-left: 0px;
-                margin-right:58px;
+                margin-right: 58px;
             };
         };
     }
-    li.left-li2{
+    li.left-li2 {
         position: relative;
         .outer-ul-li();
-
-        &>p.li2-p1{
+        &>p.li2-p1 {
             position: absolute;
-            .view-p(72px,72px,45px,@font-zzgfshct,@size-md,500,@color-navy)
+            .view-p(72px, 72px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
         };
-        &>#left-li2-chart-div{
+        &>#left-li2-chart-div {
             .chart-div()
         };
-        &>.chart-toggle-menu{
-            .chart-menu(20px,170px);
-            &>.menu-title{
-                .chart-menu-title(30px,30px,80px,@color-mid-navy,30px,12px,white,3px,10);
+        &>.chart-toggle-menu {
+            .chart-menu(20px, 170px);
+            &>.menu-title {
+                .chart-menu-title(30px, 30px, 80px, @color-mid-navy, 30px, 12px, white, 3px, 10);
             };
             &>ul {
-                .chart-menu-ul(20px,0px,@color-high-navy,0.9);
+                .chart-menu-ul(20px, 0px, @color-high-navy, 0.9);
                 opacity: 0.9;
-                &>li{
-                    .chart-menu-ul-li(white,@color-navy);
-                    &>span{
+                &>li {
+                    .chart-menu-ul-li(white, @color-navy);
+                    &>span {
                         .font-scale(scale(0.8));
                     }
                 }
             }
         }
-        &>.detail-btn{
-           .chart-detai-btn(12%,4%);
+        &>.detail-btn {
+            .chart-detai-btn(12%, 4%);
+        }
+    }
+    li.left-li3 {
+        position: relative;
+        .outer-ul-li();
+        &>p.li3-p1 {
+            position: absolute;
+            .view-p(72px, 72px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
+        };
+        &>#left-li3-chart-div {
+            .chart-div()
+        };
+        &>.chart-toggle-menu {
+            .chart-menu(20px, 170px);
+            &>.menu-title {
+                .chart-menu-title(30px, 30px, 80px, @color-mid-navy, 30px, 16px, white, 3px, 10);
+            };
+            &>ul {
+                .chart-menu-ul(20px, 0px, @color-high-navy, 0.9);
+                opacity: 0.9;
+                &>li {
+                    .chart-menu-ul-li(white, @color-navy);
+                    &>span {
+                        .font-scale(scale(1));
+                    }
+                }
+            }
+        }
+        &>.detail-btn {
+            .chart-detai-btn(12%, 4%);
         }
     }
 }
 
-
 #order_list_modal {
-   .view-modal(30px,1570px,877px,@img-order-list-modal,-175px,-99px);
-
-   & .order-list-modal-body{
-       .view-modal-body(25px,124px);
-       &>table{
-        .view-table(18px,550,14px);
-       }
-       
-   };
-   & .modal-toggle-btn-left{
-    .view-modal-content-toggle-btn(190px);
-   };
-   & .modal-toggle-btn-right{
-    .view-modal-content-toggle-btn(1368px);
-   };
+    .view-modal(30px, 1570px, 877px, @img-order-list-modal, -175px, -99px);
+    & .order-list-modal-body {
+        .view-modal-body(25px, 124px);
+        &>table {
+            .view-table(18px, 550, 14px);
+        }
+    };
+    & .modal-toggle-btn-left {
+        .view-modal-content-toggle-btn(190px);
+    };
+    & .modal-toggle-btn-right {
+        .view-modal-content-toggle-btn(1368px);
+    };
 }
-
-
-
