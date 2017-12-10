@@ -163,7 +163,7 @@
     padding: @padding-y @padding-x;
 }
 
-.view-table (@th-font-size,@th-font-weight,@td-font-size) {
+.view-table(@th-font-size,@th-font-weight,@td-font-size) {
     &>thead {
         & th {
             font-size: @th-font-size;
@@ -202,4 +202,27 @@
     ;
 }
 
+.view-modal-content-toggle-btn(@left){
+    //in bootstrap modal-content has alredy been setted position relative;  
+    position: absolute;
+    top: 412px;
+    // right: 1368px;
+    left: @left;
+    // because i is square ,yet container is  rectangle,so is will overstep div's boundary;spacify div overflow hidden can solve this confusion;
+    overflow: hidden;
+    cursor: pointer;
+    width: 20px;
+    height: 32px;
+        &>i{
+            position: absolute;
+            top: 0px;
+            left: -9px;
+            vertical-align: middle;
+            color: @color-mid-navy;
+            font-size: 36px;
+            &:hover{
+                color: @color-navy;
+            }
+        }
+}
 // Utilities

@@ -29,6 +29,15 @@
 .dh-gushumingmu:before {
   content: "\e614";
 }
+.dh-xiangzuo1:before {
+  content: "\e601";
+}
+.dh-xiangyou:before {
+  content: "\e600";
+}
+.dh-eye:before {
+  content: "\e703";
+}
 @font-face {
   font-family: "zzgfjh";
   src: url("../fonts/zzgfjh_fonts/zzgfjh.eot");
@@ -278,7 +287,43 @@ body {
   text-align: center;
 }
 #order_list_modal .modal-toggle-btn-left {
+  position: absolute;
+  top: 412px;
+  left: 190px;
+  overflow: hidden;
+  cursor: pointer;
   width: 20px;
   height: 32px;
+}
+#order_list_modal .modal-toggle-btn-left > i {
+  position: absolute;
+  top: 0px;
+  left: -9px;
+  vertical-align: middle;
+  color: #27bbee;
+  font-size: 36px;
+}
+#order_list_modal .modal-toggle-btn-left > i:hover {
+  color: #05ecfb;
+}
+#order_list_modal .modal-toggle-btn-right {
+  position: absolute;
+  top: 412px;
+  left: 1368px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 20px;
+  height: 32px;
+}
+#order_list_modal .modal-toggle-btn-right > i {
+  position: absolute;
+  top: 0px;
+  left: -9px;
+  vertical-align: middle;
+  color: #27bbee;
+  font-size: 36px;
+}
+#order_list_modal .modal-toggle-btn-right > i:hover {
+  color: #05ecfb;
 }
 /*# sourceMappingURL=./main.css.map */
