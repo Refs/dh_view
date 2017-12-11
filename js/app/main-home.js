@@ -22,53 +22,21 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         
     });
 
-    var leftLi2SpanExpand = false;
-    $('.left-li2 .detail-btn i').hover(function(){
-        var self = $(this);
-        if(!leftLi2SpanExpand){
-            self.siblings('span').css("visibility","visible");
-            leftLi2SpanExpand = true;
-        }else{
-            self.siblings('span').css("visibility","hidden");
-            leftLi2SpanExpand = false;
-        }
-    });
 
-    var leftLi3SpanExpand = false;
-    $('.left-li3 .detail-btn i').hover(function(){
-        var self = $(this);
-        if(!leftLi3SpanExpand){
-            self.siblings('span').css("visibility","visible");
-            leftLi3SpanExpand = true;
-        }else{
-            self.siblings('span').css("visibility","hidden");
-            leftLi3SpanExpand = false;
+    $('.detail-btn i').hover(
+        function(){
+            var self = $(this);
+            var sibSpan = self.siblings('span');
+            if(sibSpan.has('visible-not')){
+                sibSpan.removeClass('visible-not');
+            }
+        },function(){
+            var self = $(this);
+            var sibSpan = self.siblings('span');
+            sibSpan.addClass('visible-not');
         }
-    });
-
-    var rightLi1SpanExpand = false;
-    $('.right-li1 .detail-btn i').hover(function(){
-        var self = $(this);
-        if(!rightLi1SpanExpand){
-            self.siblings('span').css("visibility","visible");
-           rightLi1SpanExpand = true;
-        }else{
-            self.siblings('span').css("visibility","hidden");
-           rightLi1SpanExpand = false;
-        }
-    });
-
-    var rightLi2SpanExpand = false;
-    $('.right-li2 .detail-btn i').hover(function(){
-        var self = $(this);
-        if(!rightLi2SpanExpand){
-            self.siblings('span').css("visibility","visible");
-           rightLi2SpanExpand = true;
-        }else{
-            self.siblings('span').css("visibility","hidden");
-           rightLi2SpanExpand = false;
-        }
-    });
+    );
+    
 
     // $('#order_list_modal').modal('show');
     $('.left-li2 .detail-btn i').on('click',function(){
