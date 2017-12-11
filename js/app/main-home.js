@@ -1,6 +1,22 @@
 define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
 
+    // Variable declaration
     var ulExpand = false;
+    var tableScrollTimer;
+
+    // Function declaration
+    function scrollTable(obj){
+        var self = obj.find('tbody');
+        var trHeight = self.find('tr:first').height();
+        self.animate({
+            'marginTop':-trHeight + 'px'
+        },600,function(){
+            self.css({
+                marginTop : 0
+            }).find('tr:first').appendTo(self);
+        })
+    }
+
     $('.chart-toggle-menu').hover(function(){
         if (!ulExpand) {
 			$(this).children("ul").show();
@@ -22,7 +38,6 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         
     });
 
-
     $('.detail-btn i').hover(
         function(){
             var self = $(this);
@@ -37,14 +52,24 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         }
     );
     
+    
+    $('.right-li3 .right-table').hover(function(){
+        clearInterval(tableScrollTimer);
+    },function(){
+        // here this is point to window ;
+        var self = $('.right-li3 .right-table');
+        tableScrollTimer = setInterval(function(){
+            scrollTable(self);
+        },2000);
+    }).trigger("mouseleave");
 
-    // $('#order_list_modal').modal('show');
     $('.left-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
 
-    
+    $('#component_watch_modal').modal('show');
 
+    
     drawCharts.drawBmapChart($('#main')[0]);
     drawCharts.drawLeftMiddleChart($('#left-li2-chart-div')[0]);
     drawCharts.drawLeftBottomChart($('#left-li3-chart-div')[0]);

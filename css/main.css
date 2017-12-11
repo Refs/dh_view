@@ -695,6 +695,80 @@ body {
 #order_list_modal .modal-toggle-btn-right > i:hover {
   color: #05ecfb;
 }
+#component_watch_modal {
+  padding-left: 0px;
+}
+#component_watch_modal > .modal-dialog {
+  padding-top: 30px;
+  width: 1570px;
+}
+#component_watch_modal .modal-content {
+  width: 1570px;
+  height: 877px;
+  background: url(../images/dh-intel-chart.png) no-repeat center;
+  background-position: -175px -99px;
+  margin-left: 50%;
+  left: -785px;
+}
+#component_watch_modal .modal-content > .modal-header {
+  padding: 0px;
+  border-bottom: none;
+}
+#component_watch_modal .modal-content > .modal-header > p {
+  height: 92px;
+  line-height: 122px;
+  margin-left: 0px;
+  font-family: "zzgfshct", "Microsoft YaHei";
+  font-size: 30px;
+  font-weight: 500;
+  color: #f29600;
+  margin-bottom: 0px;
+  text-align: center;
+}
+#component_watch_modal .component_watch-modal-body {
+  margin: 34px 253px 106px 253px;
+  padding: 25px 124px;
+}
+#component_watch_modal .modal-toggle-btn-left {
+  position: absolute;
+  top: 412px;
+  left: 190px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 20px;
+  height: 32px;
+}
+#component_watch_modal .modal-toggle-btn-left > i {
+  position: absolute;
+  top: 0px;
+  left: -9px;
+  vertical-align: middle;
+  color: #27bbee;
+  font-size: 36px;
+}
+#component_watch_modal .modal-toggle-btn-left > i:hover {
+  color: #05ecfb;
+}
+#component_watch_modal .modal-toggle-btn-right {
+  position: absolute;
+  top: 412px;
+  left: 1368px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 20px;
+  height: 32px;
+}
+#component_watch_modal .modal-toggle-btn-right > i {
+  position: absolute;
+  top: 0px;
+  left: -9px;
+  vertical-align: middle;
+  color: #27bbee;
+  font-size: 36px;
+}
+#component_watch_modal .modal-toggle-btn-right > i:hover {
+  color: #05ecfb;
+}
 .visible-not {
   visibility: hidden !important;
 }
