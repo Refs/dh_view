@@ -58,6 +58,8 @@
 }
 body {
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
   font-family: "Microsoft YaHei";
 }
 #main {
@@ -840,7 +842,7 @@ body {
   visibility: hidden !important;
 }
 #screenFull {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   right: 75px;
   height: 17px;
