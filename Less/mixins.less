@@ -6,26 +6,47 @@
 // @import url(./mixins/skins.less);
 // Layout
 // @import url(./mixins/layout.less);
-.outer-ul(@top, @left, @bgk-x, @bgk-y) {
+.outer-ul(@top, @left,@width,@padding-left,@padding-right ,@bgk-x, @bgk-y) {
     position: absolute;
     top: @top;
     left: @left;
-    padding-top: 145px;
+    padding-top: 133px;
     padding-bottom: 13px;
-    padding-left: 83px;
+    // 70px
+    padding-left: @padding-left;
+    padding-right: @padding-right;
     margin-bottom: 0px;
-    width: 564px;
-    height: 1081px;
+    width: @width;
+    height: 1053px;
     background: @img-view no-repeat center; // background-position: 0px 0px;
     background-position-x: @bgk-x;
     background-position-y: @bgk-y;
 }
 
+
+// #view_right{
+//     position: absolute;
+//     top: 12px;
+//     left: 1356px;
+//     padding-top: 145px;
+//     padding-bottom: 13px;
+//     padding-left: 83px;
+//     margin-bottom: 0px;
+//     width: 551px;
+//     height: 1053px;
+//     background: @img-view no-repeat center; // background-position: 0px 0px;
+//     background-position-x: -1356px;
+//     background-position-y: -12px;
+// }
+
+
+
+
 .outer-ul-li() {
     height: 264px;
     width: 481px;
     margin-bottom: 44px; // background-color: @color-navy;
-    border: 1px solid gray;
+    // border: 1px solid gray;
 }
 
 .view-p(@height, @line-height, @margin-left, @font-family, @font-size, @font-weight, @color) {
@@ -226,3 +247,15 @@
         }
 }
 // Utilities
+
+
+.absolute-block(@top,@left,@width,@height,@background-url,@bp-x,@bp-y){
+    position: absolute;
+    top: @top;
+    left: @left;
+    width: @width;
+    height: @height;
+    background: @background-url no-repeat center; // background-position: 0px 0px;
+    background-position-x: @bp-x;
+    background-position-y: @bp-y;
+}

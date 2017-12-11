@@ -361,6 +361,11 @@ define(["jquery"], function ($) {
                 axisPointer : {            
                 }
             },
+            legend: {
+                top:'12%',
+                left: '60%',
+                data: ['直接访问']
+            },
             grid: {
                 top:'30%',
                 left: '3%',
@@ -368,55 +373,72 @@ define(["jquery"], function ($) {
                 bottom: '3%',
                 containLabel: true
             },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '30%',
+                    data:[10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
+        };
+        return option;
+    }
+    obj.drawRightTopOption = function(dataUrl){
+        var option = {
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            
+                }
+            },
             legend: {
-                data: ['累计发电量', '功率'],
-                y:15
+                top:'12%',
+                left: '60%',
+                data: ['直接访问']
             },
-            xAxis: {
-                data: data.datas.categories
+            grid: {
+                top:'30%',
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
             },
-            yAxis: [{
-                type: 'value',
-                name: '累计发电量(度)',
-                min: 0,
-
-                axisLabel: {
-                    formatter: '{value}'
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
                 }
-            }, {
-                type: 'value',
-                name: '功率(kw)',
-                min: 0,
-
-                axisLabel: {
-                    formatter: '{value}'
+            ],
+            yAxis : [
+                {
+                    type : 'value'
                 }
-            }],
-            series: [{
-                name: '累计发电量',
-                type: 'line',
-                areaStyle: {
-                    normal: {
-                        color: "#004983"
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#004983'
-                    }
-                },
-                data: data.datas.data1
-            }, {
-                name: '功率',
-                type: 'line',
-                yAxisIndex: 1,
-                itemStyle: {
-                    normal: {
-                        color: '#CD6600'
-                    }
-                },
-                data: data.datas.data4
-            }]
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '30%',
+                    data:[10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
         };
         return option;
     }

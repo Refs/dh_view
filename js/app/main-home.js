@@ -22,17 +22,40 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         
     });
 
-    var spanExpand = false;
+    var leftLi2SpanExpand = false;
     $('.left-li2 .detail-btn i').hover(function(){
         var self = $(this);
-        if(!spanExpand){
+        if(!leftLi2SpanExpand){
             self.siblings('span').css("visibility","visible");
-            spanExpand = true;
+            leftLi2SpanExpand = true;
         }else{
             self.siblings('span').css("visibility","hidden");
-            spanExpand = false;
+            leftLi2SpanExpand = false;
         }
+    });
 
+    var leftLi3SpanExpand = false;
+    $('.left-li3 .detail-btn i').hover(function(){
+        var self = $(this);
+        if(!leftLi3SpanExpand){
+            self.siblings('span').css("visibility","visible");
+            leftLi3SpanExpand = true;
+        }else{
+            self.siblings('span').css("visibility","hidden");
+            leftLi3SpanExpand = false;
+        }
+    });
+
+    var rightLi1SpanExpand = false;
+    $('.right-li1 .detail-btn i').hover(function(){
+        var self = $(this);
+        if(!rightLi1SpanExpand){
+            self.siblings('span').css("visibility","visible");
+           rightLi1SpanExpand = true;
+        }else{
+            self.siblings('span').css("visibility","hidden");
+           rightLi1SpanExpand = false;
+        }
     });
 
     // $('#order_list_modal').modal('show');
