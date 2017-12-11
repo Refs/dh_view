@@ -66,9 +66,17 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
     $('.left-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
+    $('.left-li3 .detail-btn i').on('click',function(){
+        $('#order_list_modal').modal('show');
+    });
     $('.right-li1 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
+    $('.right-li2 .detail-btn i').on('click',function(){
+        $('#order_list_modal').modal('show');
+    });
+
+
 
     $('.right-li3 .right-table').on('click','tr',function(){
         $('#component_watch_modal').modal('show');
