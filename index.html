@@ -203,7 +203,36 @@
 
   <!-- bottom start -->
   <div id="view_bottom">
-
+    <ul class="list-unstyled list-inline">
+      <li class="bottom-li1">
+        <i  class="dh-font dh-eryanghuatan"></i>
+        <ul class="list-unstyled">
+          <li class="bottom-li-title">9.8万吨</li>
+          <li class="bottom-li-content">二氧化碳</li>
+        </ul>
+      </li>
+      <li class="bottom-li2">
+        <i  class="dh-font dh-licheng1" ></i>
+        <ul class="list-unstyled">
+          <li class="bottom-li-title">8.54亿公里</li>
+          <li class="bottom-li-content">汽车里程</li>
+        </ul>
+      </li>
+      <li class="bottom-li3">
+        <i  class="dh-font dh-eryanghualiu"></i>
+        <ul class="list-unstyled">
+          <li class="bottom-li-title">2746.58万吨</li>
+          <li class="bottom-li-content">二氧化碳</li>
+        </ul>
+      </li>
+      <li class="bottom-li4">
+        <i class="dh-font dh-gushumingmu"></i>
+        <ul class="list-unstyled">
+          <li class="bottom-li-title">2746234棵</li>
+          <li class="bottom-li-content">等效植树</li>
+        </ul>
+      </li>
+    </ul>
   </div>
   <!-- bottom end -->
 
@@ -260,43 +289,44 @@
 
   <!-- component modal start -->
   <div class="modal fade " tabindex="-1" role="dialog" id="component_watch_modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p class="modal-title">电站智能组件监控图</p>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">电站智能组件监控图</p>
+        </div>
+        <div class="modal-body component_watch-modal-body">
+          <div class="body-form">
+            <div class="pull-left first-block">
+              <label>屋顶</label>
+              <select id="siteKind">
+                <option>庐阳管理大楼屋顶1</option>
+                <option>庐阳管理大楼屋顶2</option>
+                <option>庐阳管理大楼屋顶3</option>
+              </select>
+            </div>
+            <div class="pull-left">
+              <label>查询</label>
+              <select>
+                <option>功率1</option>
+                <option>功率2</option>
+                <option>功率3</option>
+              </select>
+            </div>
           </div>
-          <div class="modal-body component_watch-modal-body">
-              <div class="body-form">
-                  <div class="pull-left first-block">
-                      <label>屋顶</label>
-                      <select >
-                          <option>庐阳管理大楼屋顶1</option>
-                          <option>庐阳管理大楼屋顶2</option>
-                          <option>庐阳管理大楼屋顶3</option>
-                      </select>
-                  </div>
-                  <div class="pull-left">
-                      <label>查询</label>
-                      <select >
-                          <option>功率1</option>
-                          <option>功率2</option>
-                          <option>功率3</option>
-                      </select>
-                  </div>
-              </div>
-              <div class="body-content"></div>
-          </div>
-          <div class="modal-toggle-btn-left">
-            <i class="dh-font dh-xiangzuo1"></i>
-          </div>
-          <div class="modal-toggle-btn-right">
-            <i class="dh-font dh-xiangyou"></i>
-          </div>
+          <div class="body-content"></div>
+        </div>
+        <div class="modal-toggle-btn-left">
+          <i class="dh-font dh-xiangzuo1"></i>
+        </div>
+        <div class="modal-toggle-btn-right">
+          <i class="dh-font dh-xiangyou"></i>
         </div>
       </div>
     </div>
-    <!-- component modal end -->
-  
+  </div>
+  <!-- component modal end -->
+
+
 
   <!-- javascript ========================================= -->
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=b8vNnG37iSv0j3r5eLSHhHHIGG9GmngU"></script>

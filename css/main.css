@@ -407,6 +407,32 @@ body {
   background: url(../images/dh-view.png) no-repeat center;
   background-position-x: -564px;
   background-position-y: -992px;
+  padding-left: 112px;
+  padding-right: 112px;
+}
+#view_bottom > ul {
+  position: relative;
+  top: -37px;
+  margin-bottom: 0px;
+}
+#view_bottom > ul > li {
+  width: 24%;
+  position: relative;
+  padding-left: 46px;
+}
+#view_bottom > ul > li > i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 36px;
+  color: #05ecfb;
+}
+#view_bottom > ul > li > ul > li.bottom-li-title {
+  color: #05ecfb;
+  border-bottom: 2px solid #05ecfb;
+}
+#view_bottom > ul > li > ul > li.bottom-li-content {
+  color: #05ecfb;
 }
 #view_right {
   position: absolute;
@@ -583,14 +609,13 @@ body {
   font-size: 15px;
   font-weight: 510;
   color: #05ecfb;
-  border-bottom: 1px solid #05ecfb;
+  border-bottom: 2px solid #27bbee;
   text-align: center;
 }
 #view_right li.right-li3 > .right-table > table > tbody td {
   font-size: 12px;
   color: #82bcc8;
   border-top: none;
-  border-bottom: 1px dashed #82bcc8;
   text-align: center;
 }
 #view_right li.right-li3 > .right-table > table tbody {
@@ -602,6 +627,9 @@ body {
   cursor: pointer;
 }
 #view_right li.right-li3 > .right-table > table tbody tr:hover > td {
+  color: #05ecfb;
+}
+#view_right li.right-li3 > .right-table > table tbody tr > td {
   color: #05ecfb;
 }
 #order_list_modal {
@@ -645,15 +673,18 @@ body {
   font-size: 18px;
   font-weight: 550;
   color: #05ecfb;
-  border-bottom: 1px solid #05ecfb;
+  border-bottom: 2px solid #27bbee;
   text-align: center;
 }
 #order_list_modal .order-list-modal-body > table > tbody td {
   font-size: 14px;
   color: #82bcc8;
   border-top: none;
-  border-bottom: 1px dashed #82bcc8;
   text-align: center;
+}
+#order_list_modal .order-list-modal-body > table > tbody td {
+  border-bottom: 1px solid #82bcc8;
+  color: #05ecfb;
 }
 #order_list_modal .modal-toggle-btn-left {
   position: absolute;

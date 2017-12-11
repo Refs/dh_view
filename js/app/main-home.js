@@ -10,7 +10,7 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         var trHeight = self.find('tr:first').height();
         self.animate({
             'marginTop':-trHeight + 'px'
-        },600,function(){
+        },1500,function(){
             self.css({
                 marginTop : 0
             }).find('tr:first').appendTo(self);
@@ -66,8 +66,16 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
     $('.left-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
+    $('.right-li1 .detail-btn i').on('click',function(){
+        $('#order_list_modal').modal('show');
+    });
 
-    $('#component_watch_modal').modal('show');
+    $('.right-li3 .right-table').on('click','tr',function(){
+        $('#component_watch_modal').modal('show');
+    })
+
+
+  
 
     
     drawCharts.drawBmapChart($('#main')[0]);
