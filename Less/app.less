@@ -187,22 +187,6 @@ body {
         &>#right-li2-chart-div {
             .chart-div();
         };
-        // &>.chart-toggle-menu {
-        //     .chart-menu(20px, 300px);
-        //     &>.menu-title {
-        //         .chart-menu-title(30px, 30px, 80px, @color-mid-navy, 30px, 12px, white, 3px, 10);
-        //     };
-        //     &>ul {
-        //         .chart-menu-ul(20px, 0px, @color-high-navy, 0.9);
-        //         opacity: 0.9;
-        //         &>li {
-        //             .chart-menu-ul-li(white, @color-navy);
-        //             &>span {
-        //                 .font-scale(scale(0.8));
-        //             }
-        //         }
-        //     }
-        // }
         &>.detail-btn {
             .chart-detai-btn(12%, 4%);
         }
@@ -257,7 +241,48 @@ body {
 #component_watch_modal{
     .view-modal(30px, 1570px, 877px,@img-intel-chart-modal, -175px, -99px);
     & .component_watch-modal-body {
-        .view-modal-body(25px, 124px);
+        .view-modal-body(0px, 0px);
+        margin-left: 264px;
+        &>.body-form{
+            height: 104px;
+            border: 1px solid;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-top: 66px;
+            &>div:nth-child(1){
+                margin-right: 20px;
+            };
+            &>div:nth-child(2){
+                padding-left: 20px;
+                border-left: 2px solid @color-navy;
+            };
+            &>div{
+                &>label{
+                    color: @color-navy;
+                    font-size: 17px;
+                    margin-right: 10px;
+                    font-weight: 530;
+                };
+                &>select{
+                    min-width: 150px;
+                    background-color: @color-component-bgc;
+                    border: 1px solid @color-navy;
+                    color: @color-navy;
+                    &>option{
+                        background-color: @color-component-bgc;
+                    }
+                }
+            }
+        };
+        &>.body-content{
+            height: 408px;
+            border: 1px solid;
+            margin-left: 69px;
+            margin-right: 20px;
+            
+            // background-color: wheat;
+            // opacity: 0.5;
+        }
     };
     & .modal-toggle-btn-left {
         .view-modal-content-toggle-btn(190px);
