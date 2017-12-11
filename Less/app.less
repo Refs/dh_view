@@ -1,7 +1,7 @@
 body {
     position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
     font-family: @font-yahei;
 }
 
@@ -152,8 +152,10 @@ body {
             position: absolute;
             .view-p(72px, 72px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
         };
-        &>#left-li1-chart-div {
-            .chart-div()
+        &>#right-li1-chart-div {
+            .chart-div();
+            // bug this block won't inherit from its parent'height;so the chart won't render
+            // height: 264px;
         };
         &>.chart-toggle-menu {
             .chart-menu(20px, 300px);
@@ -178,11 +180,60 @@ body {
     li.right-li2{
         position: relative;
         .outer-ul-li();
+        &>p.li2-p1 {
+            position: absolute;
+            .view-p(72px, 72px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
+        };
+        &>#right-li2-chart-div {
+            .chart-div();
+        };
+        // &>.chart-toggle-menu {
+        //     .chart-menu(20px, 300px);
+        //     &>.menu-title {
+        //         .chart-menu-title(30px, 30px, 80px, @color-mid-navy, 30px, 12px, white, 3px, 10);
+        //     };
+        //     &>ul {
+        //         .chart-menu-ul(20px, 0px, @color-high-navy, 0.9);
+        //         opacity: 0.9;
+        //         &>li {
+        //             .chart-menu-ul-li(white, @color-navy);
+        //             &>span {
+        //                 .font-scale(scale(0.8));
+        //             }
+        //         }
+        //     }
+        // }
+        &>.detail-btn {
+            .chart-detai-btn(12%, 4%);
+        }
     };
     li.right-li3{
         .outer-ul-li();
+        &>p.li3-p1 {
+            .view-p(60px, 60px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
+        };
+        &>.right-table{
+            padding-left: 21px;
+            padding-right: 21px;
+            &>table{
+                .view-table(15px, 510, 12px); 
+                & tbody{
+                    height: 440px;
+                    overflow: hidden;
+                    & tr{
+                        height: 26px;
+                        cursor: pointer;
+                        &:hover{
+                            &>td{
+                                color: @color-navy;
+                            }
+                        }
+                    }
+                } 
+            };
+        };
     };
-}
+};
 
 
 

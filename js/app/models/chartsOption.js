@@ -318,8 +318,8 @@ define(["jquery"], function ($) {
                 }
             },
             legend: {
-                top:'12%',
-                left: '60%',
+                top:'20%',
+                left: '10%',
                 data: ['直接访问']
             },
             grid: {
@@ -362,8 +362,8 @@ define(["jquery"], function ($) {
                 }
             },
             legend: {
-                top:'12%',
-                left: '60%',
+                top:'20%',
+                left: '10%',
                 data: ['直接访问']
             },
             grid: {
@@ -406,8 +406,52 @@ define(["jquery"], function ($) {
                 }
             },
             legend: {
-                top:'12%',
-                left: '60%',
+                top:'20%',
+                left: '10%',
+                data: ['直接访问']
+            },
+            grid: {
+                top:'30%',
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '30%',
+                    data:[10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
+        };
+        return option;
+    }
+    obj.drawRightMidlleOption = function(dataUrl){
+        var option = {
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            
+                }
+            },
+            legend: {
+                top:'20%',
+                left: '10%',
                 data: ['直接访问']
             },
             grid: {
