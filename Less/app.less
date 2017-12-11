@@ -333,11 +333,37 @@ body {
 }
 
 
+
 // js utilities
 
 .visible-not{
     visibility: hidden !important;
 }
 
+#screenFull{
+    position: fixed;
+    bottom: 0px;
+    right: 75px;
+    height: 17px;
+    width: 20px;
+    
+    line-height: 18px;
+    text-align: center;
+    /* background-color: red; */
+    border: 1px solid ;
+    border-radius: 3px;
+    border-color: @color-high-navy;
 
+    z-index: 99;
+    &:hover{
+        border-color: @color-navy;
+    }
+    &>span{
+        color: @color-high-navy;
+        font-size: 16px;
+        &:hover{
+            color: @color-navy;
+        }
+    }
+}
 // "visibility","visible"

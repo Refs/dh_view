@@ -9,8 +9,8 @@ define(["echarts","app/models/chartsOption","BMap","view-theme"], function(EChar
         var bmap = mychart.getModel().getComponent('bmap').getBMap();
         bmap.addControl(new BMap.MapTypeControl({
             mapTypes: [BMAP_NORMAL_MAP, BMAP_SATELLITE_MAP],
-            anchor: BMAP_ANCHOR_BOTTOM_LEFT,
-            offset: new BMap.Size(0, 50)
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            offset: new BMap.Size(0, -3)
         }));
         bmap.disableDoubleClickZoom()
         bmap.addEventListener("dblclick", function (e) {

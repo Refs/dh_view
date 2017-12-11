@@ -6,7 +6,9 @@ requirejs.config({
     'jquery': 'vendor/jquery',
     'bootstrap': 'vendor/bootstrap',
     'echarts': 'vendor/echarts',
-    'view-theme': 'vendor/view-theme'
+    'view-theme': 'vendor/view-theme',
+    'screenfull':'vendor/screenfull'
+
   },
   packages: [{
     name: 'BMap',
@@ -15,6 +17,9 @@ requirejs.config({
   }],
   shim: {
     'bootstrap': {　　　　　　　　
+      deps: ['jquery']　　　　　　
+    },
+    'screenfull': {　　　　　　　　
       deps: ['jquery']　　　　　　
     },
     'echarts-theme': {　　　　　　　　

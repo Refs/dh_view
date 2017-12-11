@@ -1,4 +1,4 @@
-define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
+define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($,drawCharts){
 
     // Variable declaration
     var ulExpand = false;
@@ -63,6 +63,10 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
         },2000);
     }).trigger("mouseleave");
 
+    $('#screenFull').click(function () {
+        screenfull.toggle();
+    });
+
     $('.left-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
@@ -75,17 +79,11 @@ define(['jquery','app/controls/drawCharts','bootstrap'], function($,drawCharts){
     $('.right-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
-
-
-
     $('.right-li3 .right-table').on('click','tr',function(){
         $('#component_watch_modal').modal('show');
     })
-
-
-  
-
     
+
     drawCharts.drawBmapChart($('#main')[0]);
     drawCharts.drawLeftMiddleChart($('#left-li2-chart-div')[0]);
     drawCharts.drawLeftBottomChart($('#left-li3-chart-div')[0]);
