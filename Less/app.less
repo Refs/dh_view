@@ -1,7 +1,7 @@
 body {
     position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
     font-family: @font-yahei;
 }
 
@@ -226,30 +226,90 @@ body {
         &>p.li3-p1 {
             .view-p(60px, 60px, 45px, @font-zzgfshct, @size-md, 500, @color-navy)
         };
-        &>.right-table{
+        // &>.right-table{
+        //     padding-left: 21px;
+        //     padding-right: 21px;
+        //     &>table{
+        //         .view-table(15px, 510, 12px); 
+        //         & tbody{
+        //             height: 440px;
+        //             overflow: hidden;
+        //             & tr{
+        //                 height: 26px;
+        //                 cursor: pointer;
+        //                 &:hover{
+        //                     &>td{
+        //                         color: @color-navy;
+        //                     }
+        //                 };
+        //                 &>td{
+        //                     color: @color-navy;
+        //                     // border-bottom: 1px solid @color-table-border-color;
+        //                 }
+        //             }
+        //         } 
+        //     };
+        // };
+        & ul.li3-list{
             padding-left: 21px;
             padding-right: 21px;
-            &>table{
-                .view-table(15px, 510, 12px); 
-                & tbody{
-                    height: 440px;
-                    overflow: hidden;
-                    & tr{
-                        height: 26px;
-                        cursor: pointer;
-                        &:hover{
-                            &>td{
-                                color: @color-navy;
-                            }
-                        };
-                        &>td{
-                            color: @color-navy;
-                            // border-bottom: 1px solid @color-table-border-color;
+            // background-color: gray;
+            // height: 140px;
+            // overflow: hidden;
+            &>.list-title{
+                &>ul{
+                    border-bottom: 2px solid @color-navy;
+                    margin-bottom: 12px;
+                    &>li{
+                        color: @color-navy;
+                        width: 30%;
+                        text-align: center;
+                        font-size: 16px;
+                        
+                        &:nth-child(1){
+                            min-width: 33%;
                         }
                     }
-                } 
-            };
-        };
+                }
+            }
+            &>.list-content{
+                height: 156px;
+                overflow: hidden;
+                
+                &>ul{
+                    height: 156px;
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+                    overflow: hidden;
+                    &>li.list-tr{
+                        height: 26px;
+                        line-height: 26px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: @color-mid-navy;
+                            &>ul{
+                                &>li{
+                                    color: white;
+                                }
+                            }
+                        }
+                        &>ul{
+                            &>li{
+                                color: @color-navy;
+                                width: 30%;
+                                text-align: center;
+                                font-size: 14px;
+                                
+                                &:nth-child(1){
+                                    min-width: 33%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     };
 };
 
@@ -257,6 +317,7 @@ body {
 
 #order_list_modal {
     .view-modal(30px, 1570px, 877px, @img-order-list-modal, -175px, -99px);
+
     & .order-list-modal-body {
         .view-modal-body(25px, 124px);
         &>table {

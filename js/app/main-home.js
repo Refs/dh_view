@@ -10,7 +10,7 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
         var trHeight = self.find('tr:first').height();
         self.animate({
             'marginTop':-trHeight + 'px'
-        },1500,function(){
+        },500,function(){
             self.css({
                 marginTop : 0
             }).find('tr:first').appendTo(self);
@@ -52,16 +52,32 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
         }
     );
     
+    var tableScrollTimer;
     
-    $('.right-li3 .right-table').hover(function(){
+
+    $('.right-li3 .scroll-control').hover(function(){
         clearInterval(tableScrollTimer);
     },function(){
         // here this is point to window ;
-        var self = $('.right-li3 .right-table');
+        var self = $('.right-li3 .scroll-control');
         tableScrollTimer = setInterval(function(){
             scrollTable(self);
         },2000);
     }).trigger("mouseleave");
+
+    function scrollTable(obj){
+        // var self = obj.find('tbody');
+        var self = obj;
+        var trHeight = self.find('.list-tr:first').height();
+        self.animate({
+            'marginTop':-trHeight + 'px'
+        },500,function(){
+            self.css({
+                marginTop : 0
+            }).find('.list-tr:first').appendTo(self);
+        })
+    }
+
 
     $('#screenFull').click(function () {
         screenfull.toggle();
@@ -79,7 +95,7 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
     $('.right-li2 .detail-btn i').on('click',function(){
         $('#order_list_modal').modal('show');
     });
-    $('.right-li3 .right-table').on('click','tr',function(){
+    $('.right-li3 .scroll-control ').on('click','.list-tr',function(){
         $('#component_watch_modal').modal('show');
     })
     
