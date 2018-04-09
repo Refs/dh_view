@@ -54,23 +54,43 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
     
     var tableScrollTimer;
     
-
+/**
+ *  change start 
+ */  
     $('.right-li3 .scroll-control').hover(function(){
         clearInterval(tableScrollTimer);
     },function(){
         // here this is point to window ;
         var self = $('.right-li3 .scroll-control');
         tableScrollTimer = setInterval(function(){
-            scrollTable(self);
+            scrollTable(self, -1);
         },2000);
     }).trigger("mouseleave");
 
-    function scrollTable(obj){
+    $('.right-li3 .scroll-control').on('mousewheel DOMMouseScroll', function (e) {
+        //WebKit内核，Trident内核 => mousewheel
+        //Gecko内核 => DOMMouseScroll
+        var self = $(this);
+        e.preventDefault();
+        var value = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+        //e.originalEvent.wheelDelta => 120(up) or -120(down) 谷歌IE内核
+        //e.originalEvent.detail => -3(up) or 3(down) 火狐内核
+        var delta = Math.max(-1, Math.min(1, value));
+        scrollTable(self, delta);
+
+
+        console.log(self);
+        console.log(delta);
+        console.log(delta < 0 ? 'down' : 'up');
+
+    });
+
+    function scrollTable(obj,direction){
         // var self = obj.find('tbody');
         var self = obj;
         var trHeight = self.find('.list-tr:first').height();
         self.animate({
-            'marginTop':-trHeight + 'px'
+            'marginTop': direction*trHeight + 'px'
         },500,function(){
             self.css({
                 marginTop : 0
@@ -78,6 +98,9 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
         })
     }
 
+/**
+ *  change end 
+ */  
 
     $('#screenFull').click(function () {
         screenfull.toggle();

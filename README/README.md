@@ -778,6 +778,80 @@ var scatterData = (function () {
 
 
 
+## Jquery 的使用
+
+### 鼠标的滚轮事件
+
+1. mousewheel ： E6首先实现了mousewheel事件。此后，Opera、Chrome和Safari也都实现了这个事件。当用户通过鼠标滚轮与页面交互、在垂直方向上滚动页面时（无论向上还是向下），就会触发mousewheel事件。这个事件可以在任何元素上面触发，最终会冒泡到document（IE8）或window（IE9、Opera、Chrome及Safari）对象。与mousewheel事件对应的event对象包含鼠标事件的所有标准信息外，还包含一个特殊的wheelDelta属性。当用户向上滚动鼠标滚轮时，wheelDelta是120的倍数；当用户向下滚动鼠标滚轮时，wheelDelta是-120的倍数。
+
+2. DOMMouseScroll ： Firefox支持一个名为DOMMouseScroll的类似事件，也是在鼠标滚轮滚动时触发。与mousewheel事件一样，DOMMouseScroll也被视为鼠标事件，因而包含于鼠标事件有关的所有属性。而有关鼠标滚轮的信息则保存在detail属性中，当向上滚动鼠标滚轮时，这个属性的值是-3的倍数，当向下滚动鼠标滚轮时，这个属性的值是3的倍数。火狐内核FireFox浏览器的方向判断的数值的正负与其他浏览器是相反的。FireFox浏览器向下滚动是正值，而其他浏览器是负值。
+
+3. js的实现方式
+
+```html
+<script>
+    !function () {
+        var EventUtil = {
+            addHandler: function (element, type, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(type, handler, false);
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + type, handler);
+                } else {
+                    element['on' + type] = handler;
+                }
+            },
+            getEvent: function (event) {
+                return event ? event : window.event;
+            },
+            stopPropagation: function (event) {
+                event = event || window.event;
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                } else {
+                    event.cancelBubble = true;
+                }
+            }
+        };
+ 
+        function handleMouseWheel(event) {
+            EventUtil.stopPropagation(event);
+            event = EventUtil.getEvent(event);
+            var value = event.wheelDelta || -event.detail;
+            var delta = Math.max(-1, Math.min(1, value));
+            console.log(delta < 0 ? 'down' : 'up');
+        }
+ 
+        EventUtil.addHandler(document, 'mousewheel', handleMouseWheel);
+        EventUtil.addHandler(document, 'DOMMouseScroll', handleMouseWheel);
+    }();
+</script>
+
+```
+
+4. jquery 的实现方式
+
+```html
+<script src="//static.ydcss.com/libs/jquery/1.11.2/jquery.js"></script>
+<script>
+    !function ($) {
+        $(document).on('mousewheel DOMMouseScroll', function (e) {
+            //WebKit内核，Trident内核 => mousewheel
+            //Gecko内核 => DOMMouseScroll
+            e.preventDefault();
+            var value = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+            //e.originalEvent.wheelDelta => 120(up) or -120(down) 谷歌IE内核
+            //e.originalEvent.detail => -3(up) or 3(down) 火狐内核
+            var delta = Math.max(-1, Math.min(1, value));
+            console.log(delta < 0 ? 'down' : 'up');
+        });
+    }(jQuery);
+</script>
+
+```
+
+
+
 
 
 
