@@ -78,11 +78,6 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
         var delta = Math.max(-1, Math.min(1, value));
         scrollTable(self, delta);
 
-
-        console.log(self);
-        console.log(delta);
-        console.log(delta < 0 ? 'down' : 'up');
-
     });
 
     function scrollTable(obj,direction){
