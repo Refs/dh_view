@@ -63,6 +63,7 @@ body {
 #main {
   height: 1080px !important;
   width: 1920px !important;
+  position: relative;
 }
 #view_left {
   position: absolute;
