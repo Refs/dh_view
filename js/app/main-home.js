@@ -93,6 +93,28 @@ define(['jquery','app/controls/drawCharts','bootstrap','screenfull'], function($
         })
     }
 
+
+    /**
+     * .animate( properties [, duration ] [, easing ] [, complete ] )
+     * 
+     * cloud4: top: -1100  left 1940
+     * top:-200px;
+    left: 40px;
+     * 
+     * */  
+
+
+    // $('#controlCloud').click(function() {
+    //     var directionArray = [200];
+    //     var currentTop = parseInt( $('#cloud4').css('top'));
+    //     var currentLeft = parseInt( $('#cloud4').css('left')); 
+    //     $('#cloud4').animate({top: -200 , left: 40}, 1000 ,function() {
+    //         var self = $(this);
+    //         self.animate({top: currentTop, left: currentLeft},2000);
+    //     })
+    // })
+
+
 /**
  *  change end 
  */  

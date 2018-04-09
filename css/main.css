@@ -65,10 +65,35 @@ body {
   width: 1920px !important;
   position: relative;
 }
+#cloud1 {
+  z-index: 1;
+  position: absolute;
+  top: -735px;
+  left: -1100px;
+}
+#cloud2 {
+  z-index: 2;
+  position: absolute;
+  top: 1100px;
+  left: -1000px;
+}
+#cloud3 {
+  z-index: 3;
+  position: absolute;
+  top: -1150px;
+  left: 1800px;
+}
+#cloud4 {
+  z-idex: 4;
+  position: absolute;
+  top: 1100px;
+  left: 1940px;
+}
 #view_left {
   position: absolute;
   top: 12px;
   left: 14px;
+  z-index: 10;
   padding-top: 133px;
   padding-bottom: 13px;
   padding-left: 70px;
@@ -319,6 +344,7 @@ body {
   position: absolute;
   top: 25px;
   left: 564px;
+  z-index: 10;
   width: 792px;
   height: 272px;
   background: url(../images/dh-view.png) no-repeat center;
@@ -403,6 +429,7 @@ body {
   position: absolute;
   top: 992px;
   left: 564px;
+  z-index: 10;
   width: 792px;
   height: 34px;
   background: url(../images/dh-view.png) no-repeat center;
@@ -439,6 +466,7 @@ body {
   position: absolute;
   top: 12px;
   left: 1356px;
+  z-index: 10;
   padding-top: 133px;
   padding-bottom: 13px;
   padding-left: 0px;
